@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Демо кейса, когда элемент со страницы проникает поверх оверлея</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../lib/styles/fonts-for-demos.css">
+</head>
+<body>
+    <style>
+        :root {
+            --placeholer-background: lightgray;
+            --border-radius-size: 6px;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 40px 70px;
+        }
+
+        
+
+        div, button {
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; 
+            background-color: hsla(0, 0%, 0%, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.visible {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #888;
+            min-width: 30%;
+            max-width: 45%;
+            border-radius: var(--border-radius-size);
+            position: relative;
+            flex: 1 1 auto;
+        }
+
+        .modal-title {
+            padding: 0;
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: transparent;
+            background-image: url(./assets/cross.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 16px;
+            opacity: 0.3;
+            transition: opacity 0.15s ease-in;
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            outline-offset: 5px;
+        }
+
+        .close-button:hover, .close-button:focus-visible {
+            opacity: 1;
+        }
+
+        .button {
+            padding: 8px 12px;
+            font-size: 16px;
+            background-color: hsl(0, 0%, 0%);
+            color: hsl(0, 0%, 100%);
+            border: none;
+            border-radius: var(--border-radius-size);
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: hsla(0, 0%, 0%, 0.7);
+        }
+
+        .mb-10 {
+            margin-bottom: 10px;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .title-placeholder {
+            width: 80%;
+            height: 50px;
+            border-radius: var(--border-radius-size);
+            background-color: var(--placeholer-background);
+        }
+
+        .block-placeholder {
+            width: 100%;
+            height: 70px;
+            border-radius: var(--border-radius-size);
+            background-color: var(--placeholer-background);
+        }
+
+        .subtitle-placeholder {
+            width: 75%;
+            height: 30px;
+            border-radius: var(--border-radius-size);
+            background-color: var(--placeholer-background);
+        }
+
+        .field-placeholder {
+            width: 100%;
+            height: 40px;
+            border-radius: var(--border-radius-size);
+            background-color: var(--placeholer-background);
+        }
+
+        .cards {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .card-placeholder {
+            flex: 1 1 40%;
+            height: 100px;
+            border-radius: var(--border-radius-size);
+            background-color: var(--placeholer-background);
+        }
+
+        .phone-button {
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            background-color: transparent;
+            opacity: 1;
+            transition: opacity 0.15s ease-in;
+            width: 60px;
+            height: 60px;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            border: none;
+            outline-offset: 5px;
+            z-index: 5;
+        }
+
+        .phone-button-image {
+            width: 60px;
+            height: 60px;
+        }
+
+        .phone-button:hover {
+            opacity: 0.7;
+        }
+
+        .phone-modal {
+            z-index: 6;
+            background-color: hsla(156, 56%, 24%, 0.7);
+        }
+
+        .phone-modal-button {
+            padding: 6px 10px;
+            font-size: 16px;
+            border: 2px solid hsl(0, 0%, 0%);
+            background-color: transparent;
+            color: hsl(0, 0%, 0%);
+            border-radius: var(--border-radius-size);
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .phone-modal-button:hover {
+            opacity: 0.5;
+        }
+    </style>
+    <div class="container">
+        <div class="title-placeholder mb-20"></div>
+        <div class="block-placeholder mb-20"></div>
+        <div class="subtitle-placeholder mb-20"></div>
+        <div class="cards mb-20">
+            <div class="card-placeholder"></div>
+            <div class="card-placeholder"></div>
+        </div>
+        <div class="mb-20">
+            <button class="button" id="modal-1_open-button">Подписаться</button>
+            <div class="modal" id="modal-1">
+                <div class="modal-content">
+                    <button class="close-button" id="modal-1_close-button"></button>
+                    <div class="subtitle-placeholder mb-10"></div>
+                    <div class="block-placeholder mb-10"></div>
+                    <button class="button" id="modal-1_save-button">Сохранить</button>
+                </div>
+            </div>
+        </div>
+        <div class="subtitle-placeholder mb-20"></div>
+        <div class="block-placeholder mb-20"></div>
+        <div class="cards mb-20">
+            <div class="card-placeholder"></div>
+            <div class="card-placeholder"></div>
+            <div class="card-placeholder"></div>
+            <div class="card-placeholder"></div>
+        </div>
+        <button class="phone-button" id="phone-modal_open-button">
+             <img src="./assets/phone.svg" alt="" class="phone-button-image">
+        </button>
+        <div class="modal phone-modal" id="phone-modal">
+            <div class="modal-content">
+                <button class="close-button" id="phone-modal_close-button"></button>
+                <div class="subtitle-placeholder mb-10"></div>
+                <div class="field-placeholder mb-10"></div>
+                <div class="field-placeholder mb-10"></div>
+                <button class="phone-modal-button" id="phone-modal_save-button">Заказать звонок</button>
+            </div>
+        </div>
+    </div>
+    <script>
+       const modal = document.querySelector('#modal-1');
+       const openButton = document.querySelector('#modal-1_open-button');
+       const saveButton = document.querySelector('#modal-1_save-button');
+       const closeButton = document.querySelector('#modal-1_close-button');
+
+       openButton.addEventListener('click', () => {
+            modal.classList.add('visible');
+       });
+
+       saveButton.addEventListener('click', () => {
+            modal.classList.remove('visible');
+       });
+
+       closeButton.addEventListener('click', () => {
+            modal.classList.remove('visible');
+       });
+
+       const phoneModal = document.querySelector('#phone-modal');
+       const openPhoneModalButton = document.querySelector('#phone-modal_open-button');
+       const savePhoneModalButton = document.querySelector('#phone-modal_save-button');
+       const closePhoneModalButton = document.querySelector('#phone-modal_close-button');
+
+       openPhoneModalButton.addEventListener('click', () => {
+            phoneModal.classList.add('visible');
+       });
+
+       savePhoneModalButton.addEventListener('click', () => {
+            phoneModal.classList.remove('visible');
+       });
+
+       closePhoneModalButton.addEventListener('click', () => {
+            phoneModal.classList.remove('visible');
+       });
+    </script>
+</body>
+</html>

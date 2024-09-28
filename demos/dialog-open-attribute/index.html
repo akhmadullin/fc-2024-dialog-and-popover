@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Диалог – open атрибут</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../lib/styles/fonts-for-demos.css">
+</head>
+<body>
+    <style>
+        :root {
+            --placeholer-background: lightgray;
+            --border-radius-size: 6px;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 40px 70px;
+        }
+
+        
+
+        div, button, header, footer {
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .header {
+            flex-grow: 0;
+            flex-shrink: 0;
+            height: 70px;
+            /* background-color: hsl(0, 0%, 0%); */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 2px solid var(--placeholer-background);
+        }
+
+        .logo-link {
+            /* color: hsl(0, 0%, 100%); */
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-link:hover {
+            opacity: 0.7;
+        }
+
+        .logo {
+            display: block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            /* background-color: hsl(0, 0%, 100%); */
+            background-color: var(--placeholer-background);
+        }
+
+        .logo-text {
+            width: 60px;
+            height: 20px;
+            border-radius: var(--border-radius-size);
+            background-color: var(--placeholer-background);
+        }
+
+        .header-navigation-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-navigation-link {
+            /* color: hsl(0, 0%, 100%); */
+            display: block;
+            text-decoration: none;
+            width: 70px;
+            height: 30px;
+            border-radius: var(--border-radius-size);
+            background-color: var(--placeholer-background);
+        }
+
+        .header-navigation-link:hover {
+            opacity: 0.7;
+        }
+
+        .content { 
+            padding: 20px;
+            flex: 1;
+        }
+
+        .title-placeholder {
+            width: 80%;
+            height: 50px;
+            border-radius: var(--border-radius-size);
+            background-color: var(--placeholer-background);
+        }
+
+        .block-placeholder {
+            width: 100%;
+            height: 130px;
+            border-radius: var(--border-radius-size);
+            background-color: var(--placeholer-background);
+        }
+
+        .subtitle-placeholder {
+            width: 75%;
+            height: 30px;
+            border-radius: var(--border-radius-size);
+            background-color: var(--placeholer-background);
+        }
+
+        .button-placeholder {
+            width: 30%;
+            height: 30px;
+            border-radius: var(--border-radius-size);
+            background-color: var(--placeholer-background);
+        }
+
+        .buttons-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; 
+            background-color: hsla(0, 0%, 0%, 0.8);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.nonmodal {
+            background-color: transparent;
+            backdrop-filter: none;
+        }
+
+        .modal.visible {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #888;
+            min-width: 30%;
+            max-width: 45%;
+            border-radius: var(--border-radius-size);
+            position: relative;
+            flex: 1 1 auto;
+        }
+
+        .modal-title {
+            padding: 0;
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: transparent;
+            background-image: url(./assets/cross.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 16px;
+            opacity: 0.3;
+            transition: opacity 0.15s ease-in;
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            outline-offset: 5px;
+        }
+
+        .close-button:hover, .close-button:focus-visible {
+            opacity: 1;
+        }
+
+        .label {
+            display: block;
+        }
+
+        .text-field {
+            display: block;
+            width: 100%;
+            padding: 4px 5px;
+            height: 30px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            padding: 8px 12px;
+            font-size: 16px;
+            background-color: hsl(0, 0%, 0%);
+            color: hsl(0, 0%, 100%);
+            border: none;
+            border-radius: var(--border-radius-size);
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: hsla(0, 0%, 0%, 0.7);
+        }
+
+        .footer {
+            height: 100px;
+            border-top: 2px solid var(--placeholer-background);
+            /* background-color: hsla(0, 0%, 0%, 0.25); */
+            flex-grow: 0;
+            flex-shrink: 0;
+            padding: 20px;
+        }
+
+        .mb-10 {
+            margin-bottom: 10px;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .mb-40 {
+            margin-bottom: 40px;
+        }
+
+        dialog {
+            /* border: none;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow:
+                0px 10px 20px rgba(0, 0, 0, 0.07),
+                0px 10px 60px -5px rgba(1, 10, 48, 0.2); */
+            max-width: 80%;
+            bottom: 210px;
+            /* margin: auto; */
+            /* margin-top: calc(50% - 200px); */
+        }
+
+        dialog h2 {
+            margin-top: 0;
+        }
+
+        dialog p {
+            margin-bottom: 0;
+        }
+    </style>
+    <div class="container">
+        <header class="header mb-10">
+            <a href="#" class="logo-link">
+                <span class="logo"></span>
+                <span class="logo-text"></span>
+            </a>
+            <nav>
+                <ul class="header-navigation-list">
+                    <li><a href="#" class="header-navigation-link"></a></li>
+                    <li><a href="#" class="header-navigation-link"></a></li>
+                    <li><a href="#" class="header-navigation-link"></a></li>
+                    <li><a href="#" class="header-navigation-link"></a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <div class="title-placeholder mb-20"></div>
+            <div class="block-placeholder mb-20"></div>
+            <dialog open>
+                <h2>Буду открыт при рендере страницы</h2>
+                <p>Благодаря атрибуту <code>open</code></p>
+           </dialog>
+        </div>
+        <footer class="footer">
+            <div class="block-placeholder mb-20"></div>
+        </footer>
+    </div>
+</body>
+</html>

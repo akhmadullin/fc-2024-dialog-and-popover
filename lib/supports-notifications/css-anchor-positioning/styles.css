@@ -1,0 +1,20 @@
+.cap-supports-notification { 
+    padding: 20px;
+    background-color: rgb(255, 249, 214);
+    border-radius: 16px;
+    margin: 20px;
+}
+
+.cap-supports-notification h3 {
+    margin: 0 0 20px;
+}
+
+.cap-supports-notification p {
+    margin: 0;
+}
+
+@supports (anchor-name: --test) {
+    .cap-supports-notification {
+        display: none;
+    }
+}

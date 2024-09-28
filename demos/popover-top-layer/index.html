@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Поповер - демка про вынос поповера на top layer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../lib/styles/fonts-for-demos.css">
+    <link rel="stylesheet" href="../../lib/styles/buttons.css">
+    <link rel="stylesheet" href="../../lib/supports-notifications/popover/styles.css">
+</head>
+<body>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        html, body, div, button {
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .buttons-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(70px, 1fr));
+            grid-template-rows: 50px;
+            gap: 20px;
+            margin: 0 10%;
+        }
+
+        div#auto {
+            transform: translate(0, -80px);
+        }
+
+        div#manual {
+            transform: translate(0, 80px);
+        }
+    </style>
+    <div class="popover-supports-notification">
+        <h3>Кажется, ваш браузер не поддерживает Popover Api&nbsp;😢</h3>
+        <p>
+            Чтобы текущая демка работала корректно, откройте её в одном из
+            <a href="https://caniuse.com/mdn-api_htmlelement_popover">браузеров</a>, который поддерживает данное api
+        </p>
+    </div>
+    <div class="container">
+        <div class="buttons-wrapper">
+            <button class="button button_black" popovertarget="auto">
+                popover="auto"
+            </button>
+            <button class="button button_yellow" popovertarget="manual">
+                popover="manual"
+            </button>
+        </div>
+        <div popover="auto" id="auto">
+            Я авто поповер. Рисуюсь на top layer.
+        </div>
+        <div popover="manual" id="manual">
+            Я manual поповер. Тоже нахожусь на top layer.
+        </div>
+    </div>
+    <script>
+        const autoPopover = document.querySelector('#auto');
+        const manualPopover = document.querySelector('#manual');
+
+        manualPopover?.showPopover();
+        autoPopover?.showPopover();
+    </script>
+</body>
+</html>

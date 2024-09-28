@@ -1,0 +1,187 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Поповер и CSS Anchor Positioning</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../lib/styles/fonts-for-demos.css">
+    <link rel="stylesheet" href="../../lib/styles/buttons.css">
+    <link rel="stylesheet" href="../../lib/supports-notifications/css-anchor-positioning/styles.css">
+    <link rel="stylesheet" href="../../lib/supports-notifications/popover/styles.css">
+</head>
+<body>
+    <style>
+         html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .height-wrapper {
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200vh;
+            min-width: 200vw;
+        }
+
+        button[popovertarget="popover-example"] {
+            anchor-name: --anchor-el;
+        }
+
+        [popover] {
+            inset: unset;
+            margin: 10px;
+            border-radius: 6px;
+            padding: 10px 7px;
+            position-anchor: --anchor-el;
+            position-area: top;
+            position-try-fallbacks: --bottom, --left, --right;
+
+
+            background: hsl(0, 0%, 0%);
+            color: hsl(0, 0%, 100%);
+
+            /* ссылаемся на якорь, к которому привязан поповер */
+            position-anchor: --anchor-el;
+            /* делаем поповер якорем */
+            anchor-name: --popover;
+
+            width: max-content;
+            text-align: center;
+        }
+
+        .popover-content {
+            background: inherit;
+        }
+
+        /* хвостики */
+        [popover]::before,
+        [popover]::after,
+        [popover] .popover-content::before,
+        [popover] .popover-content::after  {
+            /* якоримся на тот же элемент, что и поповер */
+            position-anchor: --anchor-el;
+            content: '';
+            position: fixed;
+            background: inherit;
+            margin: auto;
+        }
+
+        /* для вертикальной ориентации */
+        [popover]::before,
+        [popover]::after {
+            left: anchor(--anchor-el start);
+            right: anchor(--anchor-el end);
+            /* inset-inline: anchor(start) anchor(end); */
+            width: 10px;
+            max-height: 10px;
+        }
+
+        /* для кейса, когда поповер под якорем */
+        [popover]::before {
+            /* растягиваем хвостик между двумя якорями */
+            top: anchor(--anchor-el end);
+            bottom: anchor(--popover start);
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        /* для кейса, когда поповер под якорем */
+        [popover]::after {
+            /* растягиваем хвостик между двумя якорями */
+            top: anchor(--popover end);
+            bottom: anchor(--anchor-el start);
+            transform: translateY(-7px) rotate(45deg);
+        }
+
+        /* для горизонтальной ориентации */
+        [popover] .popover-content::before,
+        [popover] .popover-content::after {
+            top: anchor(--anchor-el start);
+            bottom: anchor(--anchor-el end);
+            /* inset-block: anchor(start) anchor(end); */
+            height: 10px;
+            max-width: 10px;
+        }
+
+        /* для кейса, когда тултип справа от якоря */
+        [popover] .popover-content::before {
+            left: anchor(--anchor-el end);
+            right: anchor(--popover start);
+            /* inset-inline-start: anchor(end);
+            inset-inline-end: anchor(var(--tooltip-el-name) start); */
+            transform: translateX(7px) rotate(45deg);
+        }
+
+        /* для кейса, когда тултип слева от якоря */
+        [popover] .popover-content::after {
+            /* inset-inline-start: anchor(var(--tooltip-el-name) end);
+            inset-inline-end: anchor(start); */
+            left: anchor(--popover end);
+            right: anchor(--anchor-el start);
+            transform: translateX(-7px) rotate(45deg);
+        }
+
+        @position-try --bottom {
+            position-area: bottom;
+        }
+
+        @position-try --left {
+            position-area: left;
+        }
+
+        @position-try --right {
+            position-area: right;
+        }
+    </style>
+    <div class="cap-supports-notification">
+        <h3>Кажется, ваш браузер не поддерживает CSS Anchor Positioning&nbsp;😢</h3>
+        <p>
+            Чтобы текущая демка работала корректно, откройте её в одном из
+            <a href="https://caniuse.com/css-anchor-positioning">браузеров</a>, который поддерживает данное api
+        </p>
+    </div>
+    <div class="popover-supports-notification">
+        <h3>Кажется, ваш браузер не поддерживает Popover Api&nbsp;😢</h3>
+        <p>
+            Чтобы текущая демка работала корректно, откройте её в одном из
+            <a href="https://caniuse.com/mdn-api_htmlelement_popover">браузеров</a>, который поддерживает данное api
+        </p>
+    </div>
+    <div id="height-wrapper" class="height-wrapper">
+        <div class="container">
+            <button class="button button_yellow" popovertarget="popover-example">
+                Показать поповер
+            </button>
+            <div popover id="popover-example">
+                <div class="popover-content">
+                    Привет! Я поповер!
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const heightWrapper = document.querySelector('#height-wrapper');
+        heightWrapper?.scrollTo({
+            top: heightWrapper?.offsetHeight / 2,
+            left: heightWrapper?.offsetWidth / 2,
+            behavior: 'instant',
+        });
+    </script>
+</body>
+</html>

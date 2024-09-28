@@ -1,0 +1,41 @@
+.click-point {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid;
+    z-index: 99999;
+    animation: 1.2s grow ease;
+    opacity: 0;
+    scale: 0;
+    transform-origin: center;
+    user-select: none;
+    pointer-events: none;
+}
+
+.click-point_yellow {
+    border-color: hsla(54, 100%, 50%, 1);
+}
+
+.click-point_black {
+    border-color: hsl(0, 0%, 0%);
+}
+
+@keyframes grow {
+    0% {
+        scale: 0;
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    97% {
+        opacity: 0;
+    }
+
+    100% {
+        scale: 1;
+    }
+}

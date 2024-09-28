@@ -1,0 +1,44 @@
+.button {
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 18px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    border: 2px solid hsl(0, 0%, 0%);
+}
+
+.button_gray {
+    background-color: hsl(0, 0%, 94%);
+    color: hsl(0, 0%, 0%);
+}
+
+.button_gray:hover {
+    background-color: hsl(0, 0%, 88%);
+}
+
+.button_black {
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+}
+
+.button_black:hover {
+    background-color: hsla(0, 0%, 0%, 0.8);
+}
+
+.button_white {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 0%);
+}
+
+.button_white:hover {
+    background-color: hsl(0, 0%, 94%);
+}
+
+.button_yellow {
+    background-color: hsla(48, 98%, 64%, 1);
+    color: hsl(0, 0%, 0%);
+}
+
+.button_yellow:hover {
+    background-color: hsla(48, 98%, 50%, 1);
+}

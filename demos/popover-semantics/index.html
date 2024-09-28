@@ -1,0 +1,64 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Поповер - демка про семантику</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../lib/styles/fonts-for-demos.css">
+    <link rel="stylesheet" href="../../lib/styles/buttons.css">
+    <link rel="stylesheet" href="../../lib/supports-notifications/popover/styles.css">
+</head>
+<body>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            padding: 20px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        [popover] {
+            border: none;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0px 20px 40px rgba(46, 44, 51, 0.2), 0px 30px 80px -10px rgba(89, 66, 95, 0.2);
+        }
+
+        .mb {
+            margin-bottom: 350px;
+            opacity: 0;
+        }
+
+        /* [popover]::backdrop {
+            background-color: hsla(165, 57%, 45%, 0.5);
+        } */
+    </style>
+    <div class="popover-supports-notification">
+        <h3>Кажется, ваш браузер не поддерживает Popover Api&nbsp;😢</h3>
+        <p>
+            Чтобы текущая демка работала корректно, откройте её в одном из
+            <a href="https://caniuse.com/mdn-api_htmlelement_popover">браузеров</a>, который поддерживает данное api
+        </p>
+    </div>
+    <div class="container">
+        <button class="button button_black mb" popovertarget="popover-example">
+            Показать popover
+        </button>
+        <div popover id="popover-example">
+            Поповер и семантика
+        </div>
+    </div>
+</body>
+</html>

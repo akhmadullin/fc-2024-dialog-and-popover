@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "scripts": {
+    "pdf": "shower pdf",
+    "serve": "shower serve",
+    "archive": "shower archive",
+    "bundle": "shower bundle",
+    "publish": "shower publish"
+  },
+  "dependencies": {
+    "@shower/core": "3.3.0",
+    "@shower/ribbon": "3.5.1"
+  },
+  "devDependencies": {
+    "@shower/cli": "0.3.1"
+  }
+}

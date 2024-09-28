@@ -1,0 +1,256 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    src: url(../../fonts/Montserrat/Montserrat-Regular.woff2)
+        format("woff2");
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    src: url(../../fonts/Montserrat/Montserrat-Bold.woff2)
+        format("woff2");
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 900;
+    src: url(../../fonts/Montserrat/Montserrat-Black.woff2)
+        format("woff2");
+}
+
+:root {
+    --text-color: #000000;
+}
+
+.shower {
+    --slide-ratio: calc(16 / 9);
+}
+
+header.caption h1 {
+    font-family: 'Montserrat';
+    font-size: 0.8em;
+}
+
+header.caption p {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.big-code-sample {
+    font-size: 0.7em;
+}
+
+.demo-iframe-mobile {
+    display: block;
+    width: 35%;
+    height: 90%;
+    border: 6px solid black;
+    border-radius: 30px;
+    margin: 0 auto;
+}
+
+.demo-iframe-desktop {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 30px;
+    width: 85%;
+    height: 85%;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.slide::after {
+    position: absolute;
+    box-sizing: border-box;
+    width: calc(var(--ribbon-size) + 10px);
+    color: white;
+    counter-increment: slide;
+    content: counter(slide);
+    text-align: center;
+    background-color: black;
+    background-image: unset;
+    background-size: unset;
+    padding: 0;
+    height: auto;
+    right: 0;
+    top: 1em;
+    left: unset;
+    bottom: unset;
+}
+
+.progress::before {
+    background-color: #ed4344;
+}
+
+.slide pre code {
+    line-height: 1.4;
+    font-size: 0.9em;
+}
+
+.slide h2 {
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.shower {
+    font: 25px/2 'Montserrat', sans-serif;
+}
+
+#intro::after,
+#the-end::after {
+    display: none;
+}
+
+.slide#intro h2 {
+    font-size: 42px;
+    line-height: 1.2;
+}
+
+.bio {
+    margin-left: -55px;
+}
+
+.bio__name {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.bio__company {
+    font-size: 30px;
+    line-height: 1;
+    margin-top: 10px;
+}
+
+.muted {
+    opacity: 0.4;
+}
+
+.slide_yellow {
+    background-color: hsla(54, 100%, 50%, 1);
+}
+
+.slide .large-heading {
+    font-size: 80px;
+}
+
+.slide_with_ui_kit_screenshot {
+    background-color: hsla(0, 0%, 95%, 1);
+}
+
+.ui_kit_screenshot {
+    padding: 30px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 30px;
+    max-height: 80%;
+}
+
+.slide_with_not_fullscreen_demo {
+    background-color: hsla(0, 0%, 95%, 1);
+}
+
+.place.my-quote {
+    width: 60%;
+    margin-left: 40px;
+}
+
+.my-quote .my-quote__title {
+    margin-bottom: 50px;
+    font-size: 1.2em;
+}
+
+.slide .my-quote blockquote::before {
+    color: hsla(54, 100%, 50%, 1);
+    font-family: 'PT Sans';
+    font-size: 18em;
+}
+
+.slide  blockquote.sensey-quote::before {
+    font-family: 'PT Sans';
+    font-size: 6em;
+    margin-top: 0;
+}
+
+.end-bio {
+}
+
+.slide .end-bio__title {
+    margin-bottom: 60px;
+}
+
+.end-bio__name {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.end-bio__company {
+    font-size: 30px;
+    line-height: 1;
+    margin-top: 10px;
+}
+
+.end-bio__links {
+    margin-top: 155px;
+}
+
+.end-bio__link-block {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.end-bio__link-logo {
+    width: 40px;
+    height: 40px;
+    flex: none;
+}
+
+.slide .end-bio__link {
+    color: black;
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 3px;
+}
+
+.slide .slide_title {
+    width: calc(100% - 120px);
+    line-height: 1.3;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.slide_can-i-use {
+    background-color: #413829;
+}
+
+.slide_can-i-use__image {
+    max-height: 80%;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #f3e8d5;
+}
+
+.slide .copyright {
+    background-color: hsla(48, 98%, 64%, 1);
+    color: hsl(0, 0%, 0%);
+    padding: 4px 8px;
+    border-radius: 6px;
+    background-image: none;
+    opacity: 0.4;
+    line-height: 1;
+}
+
+.slide .copyright:hover {
+    opacity: 1;
+}
+
+.slide ul > li:lang(ru)::before {
+    content: "›";
+    font-size: 1.4em;
+    line-height: 1.3;
+}

@@ -1,0 +1,70 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Поповер - демка про popovertargetaction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../lib/styles/fonts-for-demos.css">
+    <link rel="stylesheet" href="../../lib/styles/buttons.css">
+    <link rel="stylesheet" href="../../lib/supports-notifications/popover/styles.css">
+    <link rel="stylesheet" href="../../lib/click-point-shower/styles.css">
+</head>
+<body>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        html, body, div, button {
+            box-sizing: border-box;
+        }
+
+        .mb-150 {
+            margin-bottom: 150px;
+        }
+
+        .container {
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+    </style>
+    <div class="popover-supports-notification">
+        <h3>Кажется, ваш браузер не поддерживает Popover Api&nbsp;😢</h3>
+        <p>
+            Чтобы текущая демка работала корректно, откройте её в одном из
+            <a href="https://caniuse.com/mdn-api_htmlelement_popover">браузеров</a>, который поддерживает данное api
+        </p>
+    </div>
+    <div class="container">
+        <button class="button button_white mb-150" popovertarget="popover-example" popovertargetaction="show">
+            Открыть
+        </button>
+        <button class="button button_yellow mb-150" popovertarget="popover-example" popovertargetaction="hide">
+            Закрыть
+        </button>
+        <button class="button button_black mb-150" popovertarget="popover-example" popovertargetaction="toggle">
+            Тоггл
+        </button>
+        <div popover id="popover-example">
+            Привет! Я поповер!
+        </div>
+    </div>
+    <script src="../../lib/click-point-shower/index.js"></script>
+    <script>
+        const clickPointShower = new ClickPointShower({ color: 'black' });
+        clickPointShower.startWatching();
+    </script>
+</body>
+</html>

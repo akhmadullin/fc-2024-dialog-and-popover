@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'PT Sans Caption';
+    font-weight: 400;
+    font-display: swap;
+    src: url(../../fonts/PT_Sans/pt-sans_caption-regular.woff2)
+        format("woff2");
+}
+
+@font-face {
+    font-family: 'PT Sans Caption';
+    font-weight: 700;
+    font-display: swap;
+    src: url(../../fonts/PT_Sans/pt-sans_caption-bold.woff2)
+        format("woff2");
+}
+
+body {
+    font-size: 18px;
+}
+
+* {
+    font-family: 'PT Sans Caption', system-ui, sans-serif;
+}
+
+code {
+    background-color: rgba(88, 90, 94, 0.1);
+    border-radius: 10px;
+    font-family: monospace;
+    padding: 5px 10px
+}

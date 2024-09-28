@@ -1,0 +1,20 @@
+.popover-supports-notification { 
+    padding: 20px;
+    background-color: rgb(255, 249, 214);
+    border-radius: 16px;
+    margin: 20px;
+}
+
+.popover-supports-notification h3 {
+    margin: 0 0 20px;
+}
+
+.popover-supports-notification p {
+    margin: 0;
+}
+
+@supports selector(:popover-open) {
+    .popover-supports-notification {
+        display: none;
+    }
+}

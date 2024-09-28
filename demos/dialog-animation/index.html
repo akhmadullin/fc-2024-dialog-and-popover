@@ -1,0 +1,147 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Анимация для диалога</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../lib/styles/fonts-for-demos.css">
+    <link rel="stylesheet" href="../../lib/styles/buttons.css">
+</head>
+<body>
+    <style>
+        :root {
+            /* --placeholer-background: lightgray;
+            --border-radius-size: 6px; */
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        html, body, div, button {
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        dialog {
+                border-radius: 6px;
+                border: none;
+                box-shadow: 0px 20px 40px rgba(106, 51, 177, 0.2), 0px 30px 80px -10px rgba(224, 0, 28, 0.2);
+                /* width: 200px; */
+                /* padding: 80px 40px; */
+                padding: 0;
+                max-width: 80%;
+                margin: auto;
+                /* box-shadow: 10px 5px 5px rgb(0, 255, 26); */
+                /* border: 3px solid hsl(303, 36%, 23%); */
+        }
+
+        .content-wrapper {
+            position: relative;
+            padding: 30px;
+        }
+
+        dialog::backdrop {
+            /* background-color: hsla(310, 53%, 55%, 0.3); */
+            background: linear-gradient(60deg, hsla(315, 83%, 84%, 0.8),hsla(348, 25%, 47%, 0.8),hsla(15, 62%, 11%, 0.8));
+            backdrop-filter: blur(4px);
+        }
+
+        h2 {
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: transparent;
+            background-image: url(./assets/cross.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 14px;
+            opacity: 0.3;
+            transition: opacity 0.15s ease-in;
+            width: 14px;
+            height: 14px;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            outline-offset: 5px;
+        }
+
+        .close-button:hover, .close-button:focus-visible {
+            opacity: 1;
+        }
+
+        @media (prefers-reduced-motion: no-preference) { 
+            dialog {
+                transition: 
+                    opacity .5s ease-in,
+                    scale .5s ease-in,
+                    display .5s ease-in allow-discrete;
+            }
+
+            @starting-style { 
+                dialog {
+                    opacity: 0; 
+                    scale: 1.1; 
+                }
+            }
+
+            dialog:not([open]) {
+                opacity: 0;
+                scale: .9;
+                transition-duration: .4s;
+                transition-timing-function: ease;
+            }
+        }
+            
+    </style>
+    <div class="container">
+        <button class="button button_yellow" id="modal-dialog-openner">Открыть диалог</button>
+       <dialog id="modal-dialog">
+            <div class="content-wrapper">
+                    <h2>Анимированный диалог</h2>
+                    <p>Плавно появлюсь и плавно исчезну</p>
+                    <!-- <div class="wordart blues"><span class="text">Стилизация безгранична</span><span>💅</span></div>
+                    -->
+                    <button class="close-button" id="modal-dialog-closer" autofocus></button>
+            </div>
+       </dialog>
+    </div>
+    <script>
+       // модальный диалог
+       const modalDialog = document.querySelector('#modal-dialog');
+
+       const modalDialogOpenner = document.querySelector('#modal-dialog-openner');
+       modalDialogOpenner.addEventListener('click', () => {
+            modalDialog.showModal();
+       });
+
+       const modalDialogCloser = document.querySelector('#modal-dialog-closer');
+       modalDialogCloser.addEventListener('click', () => {
+            modalDialog.close();
+       });
+    </script>
+</body>
+</html>

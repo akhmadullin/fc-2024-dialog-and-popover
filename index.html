@@ -1,0 +1,5028 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Элемент dialog и атрибут popover. Инструкции к применению</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+    <link rel="stylesheet" href="./lib/styles/slides.css">
+    <link rel="stylesheet" href="./lib/highlight/styles/atom-one-light.min.css">
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>Элемент dialog и атрибут popover. <br /> Инструкции к применению</h1>
+        <p>Рома Ахмадуллин, Дром</p>
+    </header>
+
+    <section class="slide" id="intro">
+        <div class="bio">
+            <h2>Элемент dialog<br>и атрибут popover.<br>Инструкции к применению</h2>
+            <div class="bio__name">
+                Рома Ахмадуллин
+            </div>
+            <div class="bio__company">
+                Дром
+            </div>
+            <p></p>
+            <img src="./images/face.svg" alt="" class="cover width">
+        </div>
+    </section>
+
+    <section class="slide" style="background: #bdcade">
+        <img src="./images/roma-a-compressed.jpg" alt="" class="place l" style="max-height: 600px">
+        <div class="place r" style="padding: 35px 55px 20px;
+        background: hsla(0, 0%, 100%, 0.55);
+        border-radius: 30px;
+        margin-right: 42px;
+        margin-top: 20px;">
+            <h2>Рома Ахмадуллин</h2>
+            <ul>
+                <li>фронтенд-разработчик в Дроме</li>
+                <li>6 лет в разработке</li>
+                <li>уважаю веб-стандарты и Open Source</li>
+                <li>живу во Владивостоке</li>
+                <li>хожу в горы</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide slide_yellow">
+        <h2 class="place large-heading">Модалки и&nbsp;всплывашки</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/mem-everywhere-2-x2.jpeg" class="cover width" alt="" />
+    </section>
+
+    <section class="slide slide_yellow">
+        <h2 class="place large-heading">Контролы с&nbsp;дропдауном</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/overlay-elements-in-real-sites/google-search-autocomplete-dropdown.jpg" class="place" alt="" style="max-height: 80%;" />
+    </section>
+
+    <section class="slide slide_yellow">
+        <h2 class="place large-heading">Тултипы</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/overlay-elements-in-real-sites/github-tooltip-2.jpg" class="place" alt="" style="max-height: 80%;" />
+    </section>
+
+    <section class="slide">
+        <img src="./images/overlay-elements-in-real-sites/ozon-city-tooltip-popup.jpg" class="place" alt="" style="max-width: 100%; max-height: 80%;" />
+    </section>
+
+    <section class="slide slide_yellow">
+        <h2 class="place large-heading">Меню</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/overlay-elements-in-real-sites/google-docs-file-actions-menu.jpg" class="place" alt="" style="max-width: 100%; max-height: 90%;" />
+    </section>
+
+    <section class="slide">
+        <img src="./images/overlay-elements-in-real-sites/google-docs-menu.jpg" alt="" class="cover" />
+    </section>
+
+    <section class="slide slide_yellow">
+        <h2 class="place large-heading centered-text">Всплывающие нотификации</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/overlay-elements-in-real-sites/drom-alert-notification-mobile.jpg" alt="" class="place" style="max-height: 90%;"  />
+    </section>
+
+    <section class="slide slide_yellow">
+        <h2 class="place large-heading">Сайдбар</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/overlay-elements-in-real-sites/youtube-drawer.jpg" alt="" class="cover height" />
+    </section>
+
+    <section class="slide slide_yellow">
+        <h2 class="place large-heading centered-text" style="width: 100%;">Диалоговые окна</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/overlay-elements-in-real-sites/google-docs-delete-file-dialog.jpg" alt="" class="cover width" />
+    </section>
+
+    <section class="slide">
+        <img src="./images/overlay-elements-in-real-sites/doka-subscribe-dialog.jpg" alt="" class="cover width" />
+    </section>
+
+    <section class="slide">
+        <img src="./images/overlay-elements-in-real-sites/gitlab-cookies-dialog.jpg" alt="" class="cover width" />
+    </section>
+
+    <section class="slide slide_yellow">
+        <h2 class="place large-heading">Комбинация</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/overlay-elements-in-real-sites/aviasales-tooltip-dropdown-coolies-dialog.jpg" alt="" class="cover width"  />
+    </section>
+
+    <section class="slide">
+        <img src="./images/overlay-elements-in-real-sites/aviasales-tooltip-dropdown-coolies-dialog-2.jpg" alt="" class="cover width"  />
+    </section>
+
+    <section class="slide slide_yellow">
+        <h2 class="place large-heading">UI-киты</h2>
+    </section>
+
+    <section class="slide slide_with_ui_kit_screenshot">
+        <img src="./images/ui-kits/mui-overlay-components.png" alt="" class="place ui_kit_screenshot" />
+        <a href="https://mui.com/material-ui/all-components/" class="copyright">Material UI</a>
+    </section>
+
+    <section class="slide slide_with_ui_kit_screenshot">
+        <img src="./images/ui-kits/antd-overlay-components.png" alt="" class="place ui_kit_screenshot" />
+        <a href="https://ant.design/components/overview" class="copyright">Ant Design</a>
+    </section>
+
+    <section class="slide slide_with_ui_kit_screenshot">
+        <img src="./images/ui-kits/chakra-ui-overlay-components.png" alt="" class="place ui_kit_screenshot" />
+        <a href="https://v2.chakra-ui.com/docs/components" class="copyright">Chakra UI</a>
+    </section>
+
+    <section class="slide">
+        <h2 class="place">UI-киты – ок</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/bicycle-2.jpeg" alt="" class="cover width height">
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Как оно работает?</h2>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-html">
+            &lt;div class="overlay"&gt;...&lt;/div&gt;
+            &lt;div class="modal"&gt;...&lt;/div&gt;
+            &lt;style&gt;
+                .overlay {
+                    ...
+                }
+
+                .modal {
+                    ...
+                }
+            &lt;/style&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <img src="./images/mem-god-creates.jpeg" alt="" class="cover" style="max-height: 90%;
+        margin-left: 70px;">
+        <h3 class="place r" style="right: 26%; top: 20%; line-height: 1.4;">ДОБАВИМ <br> ЧУТОЧКУ JS</h3>
+        <h3 class="place r b" style="bottom: 29%; right: 63%;">УПС</h3>
+    </section>
+
+    <section class="slide" style="display: flex; justify-content: center; align-items: center; padding: 0 50px;">
+        <h2 class="centered-text" style="line-height: 1.3;">
+            Что может пойти не так?
+            <div style="color: hsla(47, 100%, 50%, 1);">или</div>
+            <div>Что важно учесть?</div>
+        </h2>
+    </section>
+
+    <section class="slide">
+       <iframe src="./demos/tooltip-one-direction-and-overflow/index.html" class="demo-iframe-mobile"></iframe>
+    </section>
+    
+    <!-- custom таблица - заполняем привязка к якорю -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_custom-table">
+            <table class="diz-my-table">
+                <thead>
+                    <tr>
+                        <th >Характеристика</th>
+                        <th>Кастомное решение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >Привязка к якорю</td>
+                        <td >❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-javascript">
+            new IntersectionObserver(([tooltip]) => {
+                // обновляем местоположение элемента руками
+            });
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-javascript">
+            // или с помощью либы
+            import magicAutoPlacement from 'super-puper-awesome-lib';
+            magicAutoPlacement(tooltip);
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/tooltip-styling/index.html" class="demo-iframe-mobile"></iframe>
+     </section>
+
+    <!-- custom таблица - заполняем внешний вид -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_custom-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th >Характеристика</th>
+                        <th>Кастомное решение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td >Привязка к якорю</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr>
+                        <td >Внешний вид</td>
+                        <td >❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/modal-overlay/index.html" class="cover width height"></iframe>
+    </section>
+
+    <!-- custom таблица - заполняем оверлей -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_custom-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th >Характеристика</th>
+                        <th>Кастомное решение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td >Привязка к якорю</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Внешний вид</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr>
+                        <td >Оверлей</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-html">
+            &lt;div class="overlay"&gt;&lt;/div&gt;
+            &lt;style&gt;
+                .overlay {
+                    ...
+                }
+            &lt;/style&gt;
+            </code>
+        </pre>
+     </section>
+
+    <section class="slide">
+        <iframe src="./demos/light-and-explicit-dismiss-2/index.html" class="cover width height"></iframe>
+    </section>
+
+    <!-- custom таблица - заполняем явное закрытие -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_custom-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th >Характеристика</th>
+                        <th>Кастомное решение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td >Привязка к якорю</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Внешний вид</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Оверлей</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td >Явное закрытие</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">
+            <code class="language-javascript">
+            // явное закрытие 
+            closeButton.addEventListener('click', () => {
+                modal.classList.remove('visible');
+            });
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/light-and-explicit-dismiss-2/index.html" class="cover width height"></iframe>
+    </section>
+
+    <!-- custom таблица - заполняем неявное закрытие -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_custom-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th >Характеристика</th>
+                        <th>Кастомное решение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td >Привязка к якорю</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Внешний вид</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Оверлей</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Явное закрытие</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td >Неявное закрытие</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">
+            <code class="language-javascript">
+            // неявное закрытие 
+            outsideArea.addEventListener('click', () => {
+                sidebar.classList.remove('visible');
+            });
+            </code>
+        </pre>
+    </section>
+
+     <section class="slide">
+        <iframe src="./demos/modal-close-on-escape/index.html" class="cover width height"></iframe>
+     </section>
+
+    <!-- custom таблица - заполняем закрытие на escape -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_custom-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th >Характеристика</th>
+                        <th>Кастомное решение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td >Привязка к якорю</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Внешний вид</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Оверлей</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Явное закрытие</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Неявное закрытие</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td >Закрытие на Escape</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+     <section class="slide">
+        <pre class="place ">
+            <code class="language-javascript">
+            // закрываем модалку на Escape
+            window.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    modal.classList.remove('visible');
+                }
+            });
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+       <iframe src="./demos/modal-focus-trap/index.html" class="cover width height"></iframe>
+    </section>
+
+    <!-- custom таблица - заполняем focus trap -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_custom-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th >Характеристика</th>
+                        <th>Кастомное решение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td >Привязка к якорю</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Внешний вид</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Оверлей</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Явное закрытие</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Неявное закрытие</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Закрытие на Escape</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td >Focus trap</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">
+            <code class="language-javascript">
+            // используем либу
+            import { createFocusTrap } from 'focus-trap';
+            createFocusTrap(modal);
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">
+            <code class="language-html">
+            &lt;!-- расставляем атрибут inert --&gt;
+            &lt;div class="modal visible"&gt;
+                ...
+            &lt;/div&gt;
+            &lt;div class="everything-else" inert&gt;
+                ...
+            &lt;/div&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/modal-fixed-element-above-overlay-0/index.html" class="cover width height"></iframe>
+     </section>
+
+    <section class="slide">
+       <iframe src="./demos/modal-fixed-element-above-overlay/index.html" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <pre class="place" style="font-size: 2.5em;">
+            <code class="language-css" style="text-align: center;">z-index: 9999;</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+       <iframe src="./demos/modal-fixed-element-above-overlay-fix-with-z-index/index.html" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+       <iframe src="./demos/modal-in-modal/index.html" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <img src="./images/mem-prised-x2.jpeg" alt=""  class="place" style="max-height: 70%;" />
+    </section>
+
+    <section class="slide">
+        <img src="./images/mem-buben-5-x2.jpeg" alt=""  class="place" style="max-height: 70%;" />
+    </section>
+
+    <!-- custom таблица - заполняем вынос на верхний слой -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_custom-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th >Характеристика</th>
+                        <th>Кастомное решение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td >Привязка к якорю</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Внешний вид</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Оверлей</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Явное закрытие</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Неявное закрытие</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Закрытие на Escape</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Focus trap</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td >Вынос на верхний слой</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/custom-modal-no-a11y/index.html" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <img src="./images/screen-devtools-custom-dialog-no-a11y-3.jpg" alt="" class="cover" />
+    </section>
+
+    <!-- custom таблица - заполняем семантику / a11y -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_custom-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th >Характеристика</th>
+                        <th>Кастомное решение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td >Привязка к якорю</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Внешний вид</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Оверлей</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Явное закрытие</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Неявное закрытие</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Закрытие на Escape</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted"> 
+                        <td >Focus trap</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td >Вынос на верхний слой</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td >Семантика / a11y</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">
+            <code class="language-html">
+            &lt;div 
+                role="dialog"
+                aria-labelledby="modal-label"
+                aria-modal="true"
+                class="modal visible"
+            &gt;
+                &lt;h3 id="modal-label"&gt;Укажите контактные данные&lt;/h3&gt;
+            &lt;/div&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <img src="./images/screen-devtools-custom-dialog-with-a11y-3.jpg" alt="" class="cover" />
+    </section>
+
+    <!-- custom таблица - заполненная таблица -->
+    <style>
+        .diz-table-wrapper_custom-table {
+            max-width: 60%;
+        }
+
+        .slide .diz-table-wrapper_custom-table .diz-my-table th,
+        .slide .diz-table-wrapper_custom-table .diz-my-table td {
+            text-align: left;
+            padding-left: 35px;
+        }
+    </style>
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_custom-table">
+            <table class="diz-my-table">
+                <thead>
+                    <tr>
+                        <th >Характеристика</th>
+                        <th>Кастомное решение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >Привязка к якорю</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr>
+                        <td >Внешний вид</td>
+                        <td >❌</td>
+                    </tr>
+                    <tr>
+                        <td >Оверлей</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td >Явное закрытие</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td >Неявное закрытие</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td >Закрытие на Escape</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td >Focus trap</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td >Вынос на верхний слой</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td >Семантика / a11y</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Как-то сложно...</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="place t" style="width: 100%; text-align: center; font-size: 40px; margin-top: 30px; color: white;">ВОТ БУДУТ У НАС НАТИВНЫЕ МОДАЛКИ</h2>
+        <h2 class="place b" style="font-size: 40px; color: white;">ЗАЖИВЕМ</h2>
+        <img src="./images/mem-sharikov-hd.jpg" alt="" class="cover width">
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Хмм...</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/mem-dialog-popover-pepe-1.jpg" alt="" class="cover">
+    </section>
+
+    <section class="slide">
+        <img src="./images/mem-dialog-popover-pepe-2.jpg" alt="" class="cover">
+    </section>
+
+    <section class="slide">
+        <img src="./images/mem-dialog-popover-pepe-3.jpg" alt="" class="cover">
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Давайте разбираться</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="place"><code>&lt;dialog&gt;</code></h2>
+    </section>
+
+    <section class="slide">
+        <div class="place my-quote">
+            <div class="my-quote__title">
+            <code>     &lt;dialog&gt;</code>
+            </div>
+            <figure>
+                <blockquote>
+                    <p>HTML-элемент для&nbsp;построения диалогов со&nbsp;встроенной ролью dialog и&nbsp;модальными характеристиками.</p>
+                </blockquote>
+                <figcaption>HTML-спецификация</figcaption>
+            </figure>
+        </div>
+
+        <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element" class="copyright">HTML-спецификация: элемент dialog</a>
+    </section>
+
+    <section class="slide slide_can-i-use">
+        <img src="./images/can-i-use-dialog-4.jpg" class="cover slide_can-i-use__image" />
+        <a href="https://caniuse.com/dialog" class="copyright">Can I use: элемент dialog</a>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-html">
+            &lt;dialog&gt;
+                &lt;!-- содержимое диалога --&gt;
+            &lt;/dialog&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-javascript">
+            // открывает диалог в немодальном режиме
+            element.show();
+
+            // открывает диалог в модальном режиме
+            element.showModal();
+
+            // закрывает диалог
+            element.close();
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+       <iframe src="./demos/dialog-modal-and-non-modal/index.html" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-html">
+            &lt;dialog open&gt;
+                &lt;!-- содержимое диалога --&gt;
+            &lt;/dialog&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/dialog-open-attribute/index.html" class="cover width height"></iframe>
+     </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Что по характеристикам?</h2>
+    </section>
+
+    <!-- dialog table - пустая таблица -->
+    <style>
+        .diz-table-wrapper_dialog-table {
+            max-width: 60%;
+        }
+
+        .slide .diz-my-table.dialog-table th.fixed-cell, 
+        .slide .diz-my-table.dialog-table  td.fixed-cell {
+            width: 200px;
+        }
+    </style>
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_dialog-table">
+            <table class="diz-my-table dialog-table">
+                <thead>
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Dialog</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Оверлей</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Focus trap</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Вынос на верхний слой</td>
+                        <!-- <td class="fixed-cell">Top layer</td> -->
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/dialog-modal-and-non-modal-explicit-close/index.html" class="cover width height"></iframe>
+     </section>
+
+    <!-- dialog table - заполняем явное закрытие -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_dialog-table">
+            <table class="diz-my-table dialog-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Dialog</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Вынос на верхний слой</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/dialog-modal-and-non-modal-light-dismiss/index.html" class="cover width height"></iframe>
+     </section>
+    
+    <!-- dialog table - заполняем неявное закрытие -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_dialog-table">
+            <table class="diz-my-table dialog-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Dialog</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Вынос на верхний слой</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/dialog-modal-and-non-modal-escape/index.html" class="cover width height"></iframe>
+    </section>
+
+    <!-- dialog table - заполняем закрытие на Escape -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_dialog-table">
+            <table class="diz-my-table dialog-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Dialog</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Вынос на верхний слой</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/dialog-focus-trap/index.html" class="cover width height"></iframe>
+    </section>
+
+    <!-- dialog table - заполняем Focus trap -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_dialog-table">
+            <table class="diz-my-table dialog-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Dialog</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Вынос на верхний слой</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <img src="./images/screen-dev-tools-dialog-non-modal-main-layer.jpg" alt="" class="cover">
+    </section>
+
+    <section class="slide">
+        <img src="./images/screen-dev-tools-dialog-modal-top-layer.jpg" alt="" class="cover">
+    </section>
+
+    <section class="slide">
+        <div class="place my-quote">
+            <div class="my-quote__title">
+            <code>     top layer</code>
+            </div>
+            <figure>
+                <blockquote>
+                    <p>Упорядоченный набор элементов, отображающихся вне основного потока документа.</p>
+                </blockquote>
+                <figcaption>CSS-спецификация</figcaption>
+            </figure>
+        </div>
+        <a href="https://drafts.csswg.org/css-position-4/#document-top-layer" class="copyright">CSS-спецификация: top layer</a>
+    </section>
+
+    <section class="slide">
+        <img src="./images/screen-devtools-top-layer.jpg" class="cover" />
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text"><code>z-index</code> vs <code>top layer</code></h2>
+    </section>
+
+    <section class="slide">
+    <pre class="place">
+    <code class="language-html" style="line-height: 2;">
+        &lt;div class="yellow"&gt;&lt;/div&gt;
+        &lt;div class="green"&gt;&lt;/div&gt;
+        &lt;div class="blue"&gt;&lt;/div&gt;
+    </code>
+    </section>
+
+    <section class="slide">
+        <img src="./images/z-index-context-0-5.png" alt="" class="place" style="max-height: 80%;">
+    </section>
+
+    <section class="slide">
+        <img src="./images/z-index-context-1-5.png" alt="" class="place" style="max-width: 50%;">
+    </section>
+
+    <section class="slide">
+        <img src="./images/z-index-context-2-5.png" alt="" class="place" style="max-width: 50%;">
+    </section>
+
+    <section class="slide">
+        <img src="./images/z-index-context-3-5.png" alt="" class="place" style="max-width: 50%;">
+    </section>
+
+    <section class="slide">
+        <img src="./images/z-index-context-4-5.png" alt="" class="place" style="max-width: 50%;">
+    </section>
+
+    <section class="slide">
+        <img src="./images/z-index-context-5-5.png" alt="" class="place" style="max-width: 50%;">
+    </section>
+
+    <section class="slide">
+        <img src="./images/z-index-context-6-5.png" alt="" class="place" style="max-width: 50%;">
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Может ли быть несколько элементов на <code>top layer</code>?</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/top-layers-2-1.jpg" alt="" class="cover">
+    </section>
+
+    <section class="slide">
+        <img src="./images/top-layers-2-2.jpg" alt="" class="cover">
+    </section>
+
+    <section class="slide">
+        <img src="./images/top-layers-2-3.jpg" alt="" class="cover">
+    </section>
+
+     <!-- dialog table - заполняем вынос на верхний слой -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_dialog-table">
+            <table class="diz-my-table dialog-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Dialog</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Вынос на верхний слой</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/dialog-modal-and-non-modal-overlay/index.html" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <img src="./images/screens-dev-tools-dialog-modal-backdrop-2.jpg" alt="" class="cover" >
+    </section>
+
+    <section class="slide">
+        <div class="place my-quote">
+            <div class="my-quote__title">
+                <code>     backdrop</code>
+            </div>
+            <figure>
+                <blockquote>
+                    <p>Псевдоэлемент, представляющий собой блок размером с&nbsp;вьюпорт, имеющийся у&nbsp;любого элемента, попавшего в&nbsp;top&nbsp;layer.</p>
+                </blockquote>
+                <figcaption>CSS-спецификация</figcaption>
+            </figure>
+        </div>
+        <a href="https://drafts.csswg.org/css-position-4/#backdrop" class="copyright">CSS-спецификация: backdrop</a>
+    </section>
+
+    <!-- dialog table - заполняем оверлей -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_dialog-table">
+            <table class="diz-my-table dialog-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Dialog</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Вынос на верхний слой</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Внешний вид</h2>
+    </section>
+
+    <section class="slide">
+<pre class="place" style="font-size: 0.8em;">
+<code class="language-css">
+            /* стили для диалога */
+            dialog {
+                ...
+            }
+
+            /* открытого */
+            dialog[open] {
+                ...
+            }
+
+            /* модального */
+            dialog:modal {
+                ...
+            }
+
+            /* бэкдропа */
+            dialog::backdrop {
+                ...
+            }
+</code>
+</pre>
+    </section>
+    
+    <section class="slide">
+        <img src="./images/mem-imagination.jpg" alt="" class="cover">
+    </section>
+
+
+    <section class="slide">
+       <iframe src="./demos/dialog-styling/index.html" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Анимация</h2>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-css">
+            dialog {
+                transition: 
+                    opacity .5s ease-in,
+                    scale .5s ease-in,
+                    display .5s ease-in allow-discrete;
+            }
+            </code>
+        </pre>
+    </section>
+    <section class="slide">
+        <pre class="place">
+            <code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-selector-tag">dialog</span> {
+                <span class="hljs-attribute">transition</span>: 
+                    opacity .<span class="hljs-number">5s</span> ease-in,
+                    scale .<span class="hljs-number">5s</span> ease-in,</span>
+                    display .<span class="hljs-number muted">5s</span> <span class="muted">ease-in</span> allow-discrete;
+            <span class="muted">}</span>
+            </code>
+        </pre>
+    </section>
+    <section class="slide">
+        <pre class="place">
+            <code class="language-css">
+                /* открытый диалог */
+                dialog {
+                    ...
+                }
+                
+                /* открывающийся диалог */
+                @starting-style { 
+                    dialog {
+                        ...
+                    }
+                }
+
+                /* закрывающийся диалог */
+                dialog:not([open]) {
+                    ...
+                }
+            </code>
+        </pre>
+    </section>
+    <section class="slide">
+        <pre class="place">
+            <code class="language-css">
+            /* открытый диалог */
+            dialog {
+                opacity: 1;
+                scale: 1;
+            }
+            </code>
+        </pre>
+    </section>
+    <section class="slide">
+        <pre class="place">
+            <code class="language-css">
+            /* открывающийся диалог */
+            @starting-style { 
+                dialog {
+                    opacity: 0; 
+                    scale: 1.1; 
+                }
+            }
+            </code>
+        </pre>
+    </section>
+    <section class="slide">
+        <pre class="place">
+            <code class="language-css">
+            /* закрывающийся диалог */
+            dialog:not([open]) {
+                opacity: 0;
+                scale: .9;
+                transition-duration: .4s;
+                transition-timing-function: ease;
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+       <iframe src="./demos/dialog-animation/index.html" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-css">
+            @media (prefers-reduced-motion: no-preference) {
+                /* css для анимации */
+            }
+            </code>
+        </pre>
+    </section>
+
+     <!-- dialog table - заполняем внешний вид -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_dialog-table">
+            <table class="diz-my-table dialog-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Dialog</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Вынос на верхний слой</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- dialog table - заполняем внешний вид -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_dialog-table">
+            <table class="diz-my-table dialog-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Dialog</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Вынос на верхний слой</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <img src="./images/screen-devtools-dialog-a11y.jpg" alt="" class="cover" />
+    </section>
+
+     <!-- dialog table - заполняем семантику / a11y -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_dialog-table">
+            <table class="diz-my-table dialog-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Dialog</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Вынос на верхний слой</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- dialog table - полностью заполненная -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_dialog-table">
+            <table class="diz-my-table dialog-table">
+                <thead>
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Dialog</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Вынос на верхний слой</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="place"><code>popover</code></h2>
+    </section>
+
+    <section class="slide">
+        <div class="place my-quote">
+            <div class="my-quote__title">
+            <code>    popover</code>
+            </div>
+            <figure>
+                <blockquote>
+                    <p>Атрибут, который может добавить ряд поведенческих характеристик любому элементу.</p>
+                </blockquote>
+                <figcaption>HTML-спецификация</figcaption>
+            </figure>
+        </div>
+        <a href="https://html.spec.whatwg.org/multipage/popover.html#the-popover-attribute" class="copyright">HTML-спецификация: атрибут popover</a>
+    </section>
+
+    <section class="slide slide_can-i-use">
+        <img src="./images/can-i-use-popover-4.jpg" class="cover slide_can-i-use__image" />
+        <a href="https://caniuse.com/?search=popover" class="copyright">Can I use: Popover API</a>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-html">
+            &lt;div popover&gt;
+                &lt;!-- содержимое элемента --&gt;
+            &lt;/div&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-html">
+            &lt;button popovertarget="popover-example"&gt;
+                Показать popover
+            &lt;/button&gt;
+            &lt;div popover id="popover-example"&gt;
+                Привет! Я поповер!
+            &lt;/div&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+       <iframe src="./demos/popover-popovertarget/index.html" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <img src="./images/popover-works-without-js-7.gif" alt="" class="cover">
+        <img src="./images/js-disabled.png" alt="" 
+            style="right: 24%;
+            bottom: 22%;
+            position: absolute;
+            max-height: 33%;"
+        >
+        <img src="./images/white-bg.png" alt="" 
+            style="right: 0%;
+            bottom: 17%;
+            position: absolute;
+            max-height: 10%;"
+        >
+    </section>
+
+    <section class="slide">
+        <pre class="place ">            <code class="language-html hljs language-xml" data-highlighted="yes">
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">popovertarget</span>=<span class="hljs-string">"popover-example"</span> <span class="hljs-attr">popovertargetaction</span>=<span class="hljs-string">"show"</span>&gt;</span>
+                Открыть
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">popovertarget</span>=<span class="hljs-string">"popover-example"</span> <span class="hljs-attr">popovertargetaction</span>=<span class="hljs-string">"hide"</span>&gt;</span>
+                Закрыть
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">popovertarget</span>=<span class="hljs-string">"popover-example"</span> <span class="hljs-attr">popovertargetaction</span>=<span class="hljs-string">"toggle"</span>&gt;</span>
+                Тоггл
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">popover</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"popover-example"</span>&gt;</span>
+                Привет! Я поповер!
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">            <code class="language-html hljs language-xml" data-highlighted="yes">
+            <span class="hljs-tag"><span class="muted">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">popovertarget</span>=<span class="hljs-string">"popover-example"</span> </span><span class="hljs-attr">popovertargetaction</span>=<span class="hljs-string">"show"</span><span class="muted"></div>&gt;</span></span>
+                <span class="muted">Открыть
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+            <span class="hljs-tag"><span class="muted">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">popovertarget</span>=<span class="hljs-string">"popover-example"</span> </span><span class="hljs-attr">popovertargetaction</span>=<span class="hljs-string">"hide"</span><span class="muted"></div>&gt;</span></span>
+                <span class="muted">Закрыть
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+            <span class="hljs-tag"><span class="muted">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">popovertarget</span>=<span class="hljs-string">"popover-example"</span> </span><span class="hljs-attr">popovertargetaction</span>=<span class="hljs-string">"toggle"</span><span class="muted"></div>&gt;</span></span>
+                <span class="muted">Тоггл
+            <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+            <span class="muted"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">popover</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"popover-example"</span>&gt;</span>
+                Привет! Я поповер!
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/popover-popovertargetaction/index.html" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-javascript">
+            // показывает поповер
+            element.showPopover();
+
+            // скрывает поповер
+            element.hidePopover();
+
+            // переключает видимость (показывает и скрывает)
+            element.togglePopover();
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-html">
+            &lt;div popover="auto"&gt;
+                ...
+            &lt;/div&gt;
+            &lt;div popover="manual"&gt;
+                ...
+            &lt;/div&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/popover-popover-auto-manual/index.html" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Что по характеристикам?</h2>
+    </section>
+
+     <!-- popover table - пустая -->
+     <style>
+        .diz-table-wrapper_popover-table {
+            max-width: 60%;
+        }
+     </style>
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_popover-table">
+            <table class="diz-my-table">
+                <thead>
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Оверлей</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Focus trap</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Top layer</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/popover-explicit-dismiss/index.html" class="cover width height"></iframe>
+    </section>
+
+    <!-- popover table - заполняем explicit dismiss -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_popover-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/popover-light-dismiss/index.html" class="cover width height"></iframe>
+    </section>
+
+    <!-- popover table - заполняем light dismiss -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_popover-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/popover-close-on-escape/index.html" class="cover width height"></iframe>
+    </section>
+
+    <!-- popover table - заполняем закрытие на escape -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_popover-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/popover-focus-trap/index.html" class="cover width height"></iframe>
+    </section>
+
+     <!-- popover table - заполняем focus trap -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_popover-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/popover-top-layer/index.html" class="cover width height"></iframe>
+    </section>
+    
+    <section class="slide">
+        <img src="./images/screen-devtools-popover-top-layer.jpg" alt="" class="cover">
+    </section>
+
+    <!-- popover table - заполняем top layer -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_popover-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Top layer</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- popover table - заполняем top layer -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_popover-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">
+            <code class="language-css">
+            /* стили для поповера */
+            [popover] {
+               ...
+            }
+
+            /* открытого */
+            [popover]:popover-open {
+                ...
+            }
+            
+            /* бэкдропа */
+            [popover]::backdrop {
+                ...
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <iframe src="./demos/popover-styling/index.html" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">
+            <code class="language-css hljs" data-highlighted="yes">
+            <span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-attribute">transition</span>: 
+                    opacity .<span class="hljs-number">5s</span>, 
+                    scale .<span class="hljs-number">5s</span>, 
+                    translate .<span class="hljs-number">5s</span>, 
+                    overlay .<span class="hljs-number">5s</span> allow-discrete, 
+                    display .<span class="hljs-number">5s</span> allow-discrete;
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">
+            <code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-attribute">transition</span>: 
+                    opacity .<span class="hljs-number">5s</span>, 
+                    scale .<span class="hljs-number">5s</span>, 
+                    translate .<span class="hljs-number">5s</span>,</span> 
+                    overlay .<span class="hljs-number">5s</span> allow-discrete, 
+                    <span class="muted">display .<span class="hljs-number">5s</span> allow-discrete;
+            }</span>
+            </code>
+        </pre>
+    </section>
+
+<section class="slide">
+    <pre class="place">
+        <code class="language-css">
+            /* открытый поповер */
+            [popover]:popover-open {
+                ...
+            }
+
+            /* открывающийся поповер */
+            @starting-style {
+                [popover]:popover-open {
+                    ...
+                }
+            }
+
+            /* закрывающийся поповер */
+            [popover]:not(:popover-open) {
+                ...
+            }
+        </code>
+    </pre>
+</section>
+
+<section class="slide">
+    <pre class="place">
+        <code class="language-css">
+            /* бэкдроп открытого поповера */                
+            [popover]:popover-open::backdrop {
+                ...
+            }
+
+            /* бэкдроп открывающегося поповера */       
+            @starting-style {
+                [popover]:popover-open::backdrop {
+                    ...
+                }
+            }
+
+            /* бэкдроп закрытого поповера */       
+            [popover]:not(:popover-open)::backdrop {
+                ...
+            }
+        </code>
+    </pre>
+</section>
+
+    <section class="slide">
+        <iframe src="./demos/popover-animation/index.html" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-css">
+            @media (prefers-reduced-motion: no-preference) {
+                /* css для анимации */
+            }
+            </code>
+        </pre>
+    </section>
+
+     <!-- popover table - заполняем внешний вид -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_popover-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <img src="./images/popover-semantic-1-1.jpg" alt="" class="place"  style="max-width: 95%; max-height: 80%;" />
+    </section>
+
+    <section class="slide">
+        <img src="./images/screen-devtools-popover-sematics.jpg" alt="" class="cover">
+    </section>
+
+    <section class="slide">
+        <img src="./images/popover-semantic-1-1.jpg" alt="" class="place"  style="max-width: 95%; max-height: 80%;" />
+    </section>
+
+    <section class="slide">
+        <img src="./images/popover-semantic-2-2.jpg" alt="" class="place"  style="max-width: 95%; max-height: 80%;" />
+    </section>
+
+    <section class="slide" style="background: linear-gradient(to bottom, #666 0%, #333 100%)">
+        <blockquote class="place t r sensey-quote" style="color: white;
+        width: 69%;
+        position: absolute;
+        top: 18%;
+        font-size: 1.1em;
+        margin-right: 20px;">Popover дает возможность показать контент, <br/> семантику добавляем сами.</blockquote>
+        <img src="./images/mem-sensey-without-bg-2.png" alt="" class="place l b" style="height: 65%; bottom: 5%;" >
+    </section>
+
+     <!-- popover table - заполняем семантику -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_popover-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Позиционирование поповера</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/popover-semantic-1.jpg" alt="" class="place"  style="max-width: 95%; max-height: 80%;" />
+    </section>
+
+    <section class="slide">
+        <pre class="place ">
+            <code class="language-html">
+            &lt;div class="select"&gt;
+                &lt;div class="select-box"&gt;&lt;/div&gt;
+                &lt;div class="dropdown"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;style&gt;
+                .select {
+                    position: relative;
+                }
+                .dropdown {
+                    position: absolute;
+                    top: 40px;
+                    left: 0;
+                }
+            &lt;/style&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <img src="./images/native-select-dropdown-adapts-to-viewport-static.jpg" alt="" class="place"  style="max-width: 95%; max-height: 80%;" />
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Позиционирование через&nbsp;JavaScript</h2>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-html">
+            &lt;button popovertarget="popover-example"&gt;
+                ...
+            &lt;/button&gt;
+            &lt;div popover id="popover-example"&gt;
+                ...
+            &lt;/div&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-javascript">
+            import { 
+                computePosition, offset, autoPlacement, autoUpdate 
+            } from '@floating-ui/dom';
+
+            const updatePosition = () => {
+                computePosition(button, popover, {
+                    middleware: [offset(5), autoPlacement()],
+                }).then(({x, y}) => {
+                    Object.assign(popover.style, {
+                        left: `${x}px`,
+                        top: `${y}px`,
+                    });
+                });
+            };
+
+            autoUpdate(button, popover, updatePosition);
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">
+            <code class="language-css">
+            [popover] {
+                /* сбрасываем дефолтные стили */
+                inset: 0;
+                margin: 0;
+                /* выставляем стили необходимые для работы @floating-ui */
+                width: max-content;
+                position: absolute;
+                top: 0;
+                left: 0;
+                will-change: transform;
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide slide_with_not_fullscreen_demo">
+        <iframe src="./demos/popover-js-positioning/index.html" class="demo-iframe-desktop"></iframe>
+    </section>
+
+    <section class="slide">
+        <h2>Многословно</h2>
+        <h3>плюс надо тащить дополнительный JavaScript</h3>
+        <img src="./images/mem-slabaya-sobaka-plachet.jpg" alt="" class="place b r" style="max-height: 50%;">
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">CSS Anchor Positioning</h2>
+    </section>
+
+    <section class="slide slide_can-i-use">
+        <img src="./images/can-i-use-cap-4.jpg" class="cover slide_can-i-use__image" />
+        <a href="https://caniuse.com/css-anchor-positioning" class="copyright">Can I use: CSS Anchor Positioning</a>
+    </section>
+
+    <section class="slide">
+        <img src="./images/css-anchor-positioning-polyfill-repo.jpg" alt="" class="place" style="max-height: 90%;" />
+
+        <a href="https://github.com/oddbird/css-anchor-positioning" class="copyright">CSS Anchor Positioning Polyfill</a>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-html">
+            &lt;button popovertarget="popover-example"&gt;
+                ...
+            &lt;/button&gt;
+            &lt;div popover id="popover-example"&gt;
+                ...
+            &lt;/div&gt;
+            </code>
+        </pre>
+    </section>
+
+    <!-- <section class="slide">
+        <pre class="place ">
+            <code class="language-css">
+            button[popovertarget="popover-example"] {
+                /* даем якорю имя */
+                anchor-name: --button-element;
+            }
+
+            [popover] {
+                inset: unset;
+                margin: 10px;
+                /* привязываемся к якорю по его имени */
+                position-anchor: --button-element;
+                /* показываем поповер выше якоря */
+                bottom: anchor(top);
+                /* выравниваем по центру */
+                justify-self: anchor-center;
+            }
+            </code>
+        </pre>
+    </section> -->
+    <section class="slide">
+        <pre class="place "><code class="language-css hljs" data-highlighted="yes">
+            <span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[popovertarget=<span class="hljs-string">"popover-example"</span>]</span> {
+                <span class="hljs-comment">/* даем якорю имя */</span>
+                <span class="hljs-attribute">anchor-name</span>: --button-element;
+            }
+
+            <span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-attribute">inset</span>: unset;
+                <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;
+                <span class="hljs-comment">/* привязываемся к якорю по его имени */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;
+                <span class="hljs-comment">/* показываем поповер выше якоря */</span>
+                <span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">anchor</span>(top);
+                <span class="hljs-comment">/* выравниваем по центру */</span>
+                <span class="hljs-attribute">justify-self</span>: anchor-center;
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place "><code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[popovertarget=<span class="hljs-string">"popover-example"</span>]</span> {</span>
+                <span class="hljs-comment">/* даем якорю имя */</span>
+                <span class="hljs-attribute">anchor-name</span>: --button-element;
+            <span class="muted">}</span>
+
+            <span class="muted"><span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-attribute">inset</span>: unset;
+                <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;
+                <span class="hljs-comment">/* привязываемся к якорю по его имени */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;
+                <span class="hljs-comment">/* показываем поповер выше якоря */</span>
+                <span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">anchor</span>(top);
+                <span class="hljs-comment">/* выравниваем по центру */</span>
+                <span class="hljs-attribute">justify-self</span>: anchor-center;
+            }</span>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place "><code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[popovertarget=<span class="hljs-string">"popover-example"</span>]</span> {
+                <span class="hljs-comment">/* даем якорю имя */</span>
+                <span class="hljs-attribute">anchor-name</span>: --button-element;
+            }</span>
+
+            <span class="muted"><span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-attribute">inset</span>: unset;
+                <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;</span>
+                <span class="hljs-comment">/* привязываемся к якорю по его имени */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;
+                <span class="muted"><span class="hljs-comment">/* показываем поповер выше якоря */</span>
+                <span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">anchor</span>(top);
+                <span class="hljs-comment">/* выравниваем по центру */</span>
+                <span class="hljs-attribute">justify-self</span>: anchor-center;
+            }</span>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place "><code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[popovertarget=<span class="hljs-string">"popover-example"</span>]</span> {
+                <span class="hljs-comment">/* даем якорю имя */</span>
+                <span class="hljs-attribute">anchor-name</span>: --button-element;
+            }
+
+            <span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-attribute">inset</span>: unset;
+                <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;
+                <span class="hljs-comment">/* привязываемся к якорю по его имени */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;</span>
+                <span class="hljs-comment">/* показываем поповер выше якоря */</span>
+                <span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">anchor</span>(top);
+                <span class="muted"><span class="hljs-comment">/* выравниваем по центру */</span>
+                <span class="hljs-attribute">justify-self</span>: anchor-center;
+            }</span>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place "><code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-selector-tag">button</span><span class="hljs-selector-attr">[popovertarget=<span class="hljs-string">"popover-example"</span>]</span> {
+                <span class="hljs-comment">/* даем якорю имя */</span>
+                <span class="hljs-attribute">anchor-name</span>: --button-element;
+            }
+
+            <span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-attribute">inset</span>: unset;
+                <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span>;
+                <span class="hljs-comment">/* привязываемся к якорю по его имени */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;
+                <span class="hljs-comment">/* показываем поповер выше якоря */</span>
+                <span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">anchor</span>(top);</span>
+                <span class="hljs-comment">/* выравниваем по центру */</span>
+                <span class="hljs-attribute">justify-self</span>: anchor-center;
+            <span class="muted">}</span>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide slide_with_not_fullscreen_demo">
+        <iframe src="./demos/popover-css-anchor-positioning-0/index.html" class="demo-iframe-desktop"></iframe>
+    </section>
+
+    <!-- <section class="slide">
+        <pre class="place ">
+            <code class="language-css">
+            [popover] {
+                /* bottom: anchor(top);
+                   justify-self: anchor-center; */
+
+                /* более простой способ записи 
+                   для стандартных положений */
+                position-area: top;
+                /* или так */
+                position-area: block-start;
+            }
+            </code>
+        </pre>
+    </section> -->
+
+    <section class="slide">
+        <pre class="place ">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">anchor</span>(top);
+                <span class="hljs-attribute">justify-self</span>: anchor-center;
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="hljs-selector-attr">[popover]</span> {
+                <span style="text-decoration: line-through;"><span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">anchor</span>(top);</span>
+                <span style="text-decoration: line-through;"><span class="hljs-attribute">justify-self</span>: anchor-center;</span>
+
+                <span class="hljs-comment">/* физическое значение */</span>
+                <span class="hljs-attribute">position-area</span>: top;
+                <span class="hljs-comment">/* логическое значение */</span>
+                <span class="hljs-attribute">position-area</span>: block-start;
+            }
+            </code>
+        </pre>
+    </section>
+
+    
+    <section class="slide">
+        <div style="background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 45px;"></div>
+        <iframe src="https://una.github.io/anchor-tool/" class="cover width height"></iframe>
+        <a href="https://github.com/una/anchor-tool" class="copyright">Anchor position tool</a>
+    </section>
+
+    <section class="slide slide_with_not_fullscreen_demo">
+        <iframe src="./demos/popover-css-anchor-positioning-1/index.html" class="demo-iframe-desktop"></iframe>
+    </section>
+
+    <!-- <section class="slide">
+        <pre class="place">
+            <code class="language-css">
+            [popover] {
+                position-area: top;
+                position-try-fallbacks: --bottom;
+            }
+    
+            @position-try --bottom {
+                position-area: bottom;
+            }
+            </code>
+        </pre>
+    </section> -->
+    <section class="slide">
+        <pre class="place">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-attribute">position-area</span>: top;
+                <span class="hljs-attribute">position-try-fallbacks</span>: --bottom;
+            }
+    
+            <span class="hljs-keyword">@position-try</span> --bottom {
+                <span class="hljs-attribute">position-area</span>: bottom;
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-selector-attr">[popover]</span> {</span>
+                <span class="hljs-attribute">position-area</span>: top;
+                <span class="muted"><span class="hljs-attribute">position-try-fallbacks</span>: --bottom;
+            }
+    
+            <span class="hljs-keyword">@position-try</span> --bottom {
+                <span class="hljs-attribute">position-area</span>: bottom;
+            }</span>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-attribute">position-area</span>: top;</span>
+                <span class="hljs-attribute">position-try-fallbacks</span>: --bottom;
+            <span class="muted">}
+    
+            <span class="hljs-keyword">@position-try</span> --bottom {
+                <span class="hljs-attribute">position-area</span>: bottom;
+            }</span>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-attribute">position-area</span>: top;
+                <span class="hljs-attribute">position-try-fallbacks</span>: --bottom;
+            }</span>
+    
+            <span class="hljs-keyword">@position-try</span> --bottom {
+                <span class="hljs-attribute">position-area</span>: bottom;
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide slide_with_not_fullscreen_demo">
+        <iframe src="./demos/popover-css-anchor-positioning-2/index.html" class="demo-iframe-desktop"></iframe>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">
+            Хочется красоты 💅
+        </h2>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">
+            <code class="language-css">
+            /* добавляем стиля поповеру */
+            [popover] {
+                background: hsl(0, 0%, 0%);
+                color: hsl(0, 0%, 100%);
+                overflow: visible;
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">
+            <code class="language-css">
+            /* добавляем хвостик тултипа */
+            [popover]::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 50%;
+                transform: translate(-50%, 0px);
+                transform-origin: center top;
+                border-style: solid;
+                border-width: 5px 5px 0px;
+                border-color: hsl(0, 0%, 0%) transparent transparent;
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide slide_with_not_fullscreen_demo">
+        <iframe src="./demos/popover-css-anchor-positioning-3/index.html" class="demo-iframe-desktop"></iframe>
+    </section>
+
+    <section class="slide">
+        <img src="./images/mem-hmmm.jpg" alt="" class="place"  style="width: 100%; height: 100%; object-fit: cover;" />
+    </section>
+
+    <!-- <section class="slide">
+        <pre class="place ">
+            <code class="language-css">
+            [popover] {
+                /* ссылаемся на якорь, к которому привязан поповер */
+                position-anchor: --button-element;
+                /* делаем поповер якорем */
+                anchor-name: --popover-element;
+            }
+            /* хвостики */
+            [popover]::before, [popover]::after {
+                /* якоримся на тот же элемент, что и поповер */
+                position-anchor: --button-element;
+                content: '';
+                position: fixed;
+                background: inherit;
+                margin: auto;
+            }
+            </code>
+        </pre>
+    </section> -->
+
+    <section class="slide">
+        <pre class="place ">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-comment">/* ссылаемся на якорь, к которому привязан поповер */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;
+                <span class="hljs-comment">/* делаем поповер якорем */</span>
+                <span class="hljs-attribute">anchor-name</span>: --popover-element;
+            }
+            <span class="hljs-comment">/* хвостики */</span>
+            <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::before</span>, <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::after</span> {
+                <span class="hljs-comment">/* якоримся на тот же элемент, что и поповер */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;
+                <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
+                <span class="hljs-attribute">position</span>: fixed;
+                <span class="hljs-attribute">background</span>: inherit;
+                <span class="hljs-attribute">margin</span>: auto;
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-selector-attr">[popover]</span> {</span>
+                <span class="hljs-comment">/* ссылаемся на якорь, к которому привязан поповер */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;
+                <span class="muted"><span class="hljs-comment">/* делаем поповер якорем */</span>
+                <span class="hljs-attribute">anchor-name</span>: --popover-element;
+            }
+            <span class="hljs-comment">/* хвостики */</span>
+            <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::before</span>, <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::after</span> {
+                <span class="hljs-comment">/* якоримся на тот же элемент, что и поповер */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;
+                <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
+                <span class="hljs-attribute">position</span>: fixed;
+                <span class="hljs-attribute">background</span>: inherit;
+                <span class="hljs-attribute">margin</span>: auto;
+            }</span>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-comment">/* ссылаемся на якорь, к которому привязан поповер */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;</span>
+                <span class="hljs-comment">/* делаем поповер якорем */</span>
+                <span class="hljs-attribute">anchor-name</span>: --popover-element;
+            <span class="muted">}</span>
+            <span class="muted"><span class="hljs-comment">/* хвостики */</span>
+            <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::before</span>, <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::after</span> {
+                <span class="hljs-comment">/* якоримся на тот же элемент, что и поповер */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;
+                <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
+                <span class="hljs-attribute">position</span>: fixed;
+                <span class="hljs-attribute">background</span>: inherit;
+                <span class="hljs-attribute">margin</span>: auto;
+            }</span>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-comment">/* ссылаемся на якорь, к которому привязан поповер */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;
+                <span class="hljs-comment">/* делаем поповер якорем */</span>
+                <span class="hljs-attribute">anchor-name</span>: --popover-element;
+            }</span>
+            <span class="hljs-comment">/* хвостики */</span>
+            <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::before</span>, <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::after</span> {
+                <span class="muted"><span class="hljs-comment">/* якоримся на тот же элемент, что и поповер */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;
+                <span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
+                <span class="hljs-attribute">position</span>: fixed;
+                <span class="hljs-attribute">background</span>: inherit;
+                <span class="hljs-attribute">margin</span>: auto;</span>
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-selector-attr">[popover]</span> {
+                <span class="hljs-comment">/* ссылаемся на якорь, к которому привязан поповер */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;
+                <span class="hljs-comment">/* делаем поповер якорем */</span>
+                <span class="hljs-attribute">anchor-name</span>: --popover-element;
+            }
+            <span class="hljs-comment">/* хвостики */</span>
+            <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::before</span>, <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::after</span> {</span>
+                <span class="hljs-comment">/* якоримся на тот же элемент, что и поповер */</span>
+                <span class="hljs-attribute">position-anchor</span>: --button-element;
+                <span class="muted"><span class="hljs-attribute">content</span>: <span class="hljs-string">''</span>;
+                <span class="hljs-attribute">position</span>: fixed;
+                <span class="hljs-attribute">background</span>: inherit;
+                <span class="hljs-attribute">margin</span>: auto;
+            }</span>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">
+            <code class="language-css">
+            /* задаем размеры хвостиков */    
+            [popover]::before,
+            [popover]::after {
+                left: anchor(--button-element start);
+                right: anchor(--button-element end);
+                width: 10px;
+                max-height: 10px;
+            }
+            </code>
+        </pre>
+    </section>
+
+    <!-- <section class="slide">
+        <pre class="place ">
+            <code class="language-css">
+            /* для кейса, когда поповер под якорем */
+            [popover]::before {
+                /* растягиваем хвостик между двумя якорями */
+                top: anchor(--button-element end);
+                bottom: anchor(--popover-element start);
+                transform: translateY(7px) rotate(45deg);
+            }
+
+            /* для кейса, когда поповер под якорем */
+            [popover]::after {
+                /* растягиваем хвостик между двумя якорями */
+                top: anchor(--popover-element end);
+                bottom: anchor(--button-element start);
+                transform: translateY(-7px) rotate(45deg);
+            }
+            </code>
+        </pre>
+    </section> -->
+    <section class="slide">
+        <pre class="place ">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="hljs-comment">/* для кейса, когда поповер под якорем */</span>
+            <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::before</span> {
+                <span class="hljs-comment">/* растягиваем хвостик между двумя якорями */</span>
+                <span class="hljs-attribute">top</span>: <span class="hljs-built_in">anchor</span>(--button-element end);
+                <span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">anchor</span>(--popover-element start);
+                <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(<span class="hljs-number">7px</span>) <span class="hljs-built_in">rotate</span>(<span class="hljs-number">45deg</span>);
+            }
+
+            <span class="hljs-comment">/* для кейса, когда поповер под якорем */</span>
+            <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::after</span> {
+                <span class="hljs-comment">/* растягиваем хвостик между двумя якорями */</span>
+                <span class="hljs-attribute">top</span>: <span class="hljs-built_in">anchor</span>(--popover-element end);
+                <span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">anchor</span>(--button-element start);
+                <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(-<span class="hljs-number">7px</span>) <span class="hljs-built_in">rotate</span>(<span class="hljs-number">45deg</span>);
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="hljs-comment">/* для кейса, когда поповер под якорем */</span>
+            <span class="muted"><span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::before</span> {</span>
+                <span class="hljs-comment">/* растягиваем хвостик между двумя якорями */</span>
+                <span class="hljs-attribute">top</span>: <span class="hljs-built_in">anchor</span>(--button-element end);
+                <span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">anchor</span>(--popover-element start);
+                <span class="muted"><span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(<span class="hljs-number">7px</span>) <span class="hljs-built_in">rotate</span>(<span class="hljs-number">45deg</span>);
+            }
+
+            <span class="hljs-comment">/* для кейса, когда поповер под якорем */</span>
+            <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::after</span> {
+                <span class="hljs-comment">/* растягиваем хвостик между двумя якорями */</span>
+                <span class="hljs-attribute">top</span>: <span class="hljs-built_in">anchor</span>(--popover-element end);
+                <span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">anchor</span>(--button-element start);
+                <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(-<span class="hljs-number">7px</span>) <span class="hljs-built_in">rotate</span>(<span class="hljs-number">45deg</span>);
+            }</span>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place ">            <code class="language-css hljs" data-highlighted="yes">
+            <span class="muted"><span class="hljs-comment">/* для кейса, когда поповер под якорем */</span>
+            <span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::before</span> {
+                <span class="hljs-comment">/* растягиваем хвостик между двумя якорями */</span>
+                <span class="hljs-attribute">top</span>: <span class="hljs-built_in">anchor</span>(--button-element end);
+                <span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">anchor</span>(--popover-element start);
+                <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(<span class="hljs-number">7px</span>) <span class="hljs-built_in">rotate</span>(<span class="hljs-number">45deg</span>);
+            }</span>
+
+            <span class="hljs-comment">/* для кейса, когда поповер под якорем */</span>
+            <span class="muted"><span class="hljs-selector-attr">[popover]</span><span class="hljs-selector-pseudo">::after</span> {</span></span>
+                <span class="hljs-comment">/* растягиваем хвостик между двумя якорями */</span>
+                <span class="hljs-attribute">top</span>: <span class="hljs-built_in">anchor</span>(--popover-element end);
+                <span class="hljs-attribute">bottom</span>: <span class="hljs-built_in">anchor</span>(--button-element start);
+                <span class="muted"><span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(-<span class="hljs-number">7px</span>) <span class="hljs-built_in">rotate</span>(<span class="hljs-number">45deg</span>);
+            }</span>
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide slide_with_not_fullscreen_demo">
+        <iframe src="./demos/popover-css-anchor-positioning-4/index.html" class="demo-iframe-desktop"></iframe>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">А на 4 стороны?</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/mem-vzhuh.jpg" alt="" class="place"  style="width: 100%; height: 100%; object-fit: cover;" />
+    </section>
+
+    <section class="slide slide_with_not_fullscreen_demo">
+        <iframe src="./demos/popover-css-anchor-positioning-5/index.html" class="demo-iframe-desktop"></iframe>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Без единой строчки JavaScript'a<br><span style="font-size: 1.2em;">😍</span></h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/mem-patrick.jpg" alt="" class="cover width">
+    </section>
+
+     <!-- popover table - заполняем привязку к якорю -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_popover-table">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted"> 
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- popover table - заполненная -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper diz-table-wrapper_popover-table">
+            <table class="diz-my-table">
+                <thead>
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Top layer</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Какие UI-паттерны закрывают dialog и popover?</h2>
+    </section>
+
+    <section class="slide">
+        <div class="place t l" style="top:85px; left: 150px;">
+            <code>&lt;dialog&gt;</code>
+            <ul>
+                <li class="next">диалоговые окна</li>
+                <li class="next">модальные окна</li>
+            </ul>
+        </div>
+        <div class="place t r" style="top:85px; right: 80px;">
+            <code class="next">popover</code>
+            <ul>
+                <li class="next">тултипы</li>
+                <li class="next">всплывающие нотификации</li>
+                <li class="next">поля ввода с дропдауном</li>
+                <li class="next">меню</li>
+                <li class="next">сайдбары</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Как на практике использовать dialog и popover?</h2>
+    </section>
+
+    <section class="slide">
+        <div class="place" style="width: 70%; border-radius: 20px; background-color: hsl(216, 36%, 95%); padding: 20px 20px 30px;">
+            <img src="./images/screen-component-repo-head-3.jpg" alt="" style="width:100%;">
+            <img src="./images/qr-code-dialog-popover-use-cases-repo.png" alt="" style="height: 200px; margin: 0px auto 20px; display: block; padding: 15px; border-radius: 12px; background: white;">
+        </div>
+        <a href="https://github.com/akhmadullin/dialog-and-popover-use-cases" class="copyright">Компоненты на основе dialog и popover</a>
+    </section>
+
+    <section class="slide">
+        <iframe src="https://akhmadullin.github.io/dialog-and-popover-use-cases" class="cover width height"></iframe>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Что дальше?</h2>
+    </section>
+
+    <section class="slide">
+        <div class="place">
+            <img src="./images/open-ui.png" alt="" style="height: 200px;">
+            <p class="centered-text" style="font-size: 2em; margin-top: -30px;">Open UI</p>
+        </div>
+
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Invoker Commands</h2>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-html">
+            &lt;!-- Пример возможного синтаксиса --&gt;
+            &lt;button 
+                command="show-modal" 
+                commandfor="my-dialog"
+            &gt;
+                Открыть диалог
+            &lt;/button&gt;
+
+            &lt;dialog id="my-dialog"&gt;
+                ...
+            &lt;/dialog&gt;
+            </code>
+        </pre>
+        <a href="https://open-ui.org/components/invokers.explainer/" class="copyright">Эксплейнер для Invoker Commands</a>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Interest Invokers</h2>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-html">
+            &lt;!-- Пример возможного синтаксиса --&gt;
+            &lt;button interesttarget="my-popover"&gt;
+                Показать поповер
+            &lt;/button&gt;
+
+            &lt;div id="my-popover" popover&gt;
+                Контент поповера
+            &lt;/div&gt;
+            </code>
+        </pre>
+        <a href="https://open-ui.org/components/interest-invokers.explainer/" class="copyright">Эксплейнер для Interest Invokers</a>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-html" style="font-size: 0.8em;">
+                &lt;!-- Пример возможного синтаксиса --&gt;
+                &lt;button interesttarget="my-custom" interestaction="custom-action"&gt;
+                    Покажу скрытый текст, если проявишь интерес
+                &lt;/button&gt;
+                  
+                &lt;div id="my-custom">Скрытый текст&lt;/div&gt;
+                  
+                &lt;script&gt;
+                    const custom = document.getElementById("my-custom");
+                    custom.addEventListener("interest", (e) => {
+                      if (e.action !== "custom-action") return;
+                      custom.classList.add('active')
+                    });
+                    custom.addEventListener("loseinterest", (e) => {
+                      if (e.action !== "custom-action") return;
+                      custom.classList.remove('active')
+                    });
+                &lt;/script&gt;
+            </code>
+        </pre>
+        <a href="https://open-ui.org/components/interest-invokers.explainer/" class="copyright">Эксплейнер для Interest Invokers</a>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Подведем итоги</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Что разные подходы умеют по&nbsp;дефолту?</h2>
+    </section>
+
+    <!-- сводная таблица - заполненная -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper">
+            <table class="diz-my-table">
+                <thead>
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th rowspan="2" class="vertical-alinged-top">Кастом</th>
+                        <th colspan="2">Dialog</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Top layer</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- сводная таблица - подсвечиваем привязку к якорю -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th rowspan="2" class="vertical-alinged-top">Кастом</th>
+                        <th colspan="2">Dialog</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+     <!-- сводная таблица - подсвечиваем внешний вид -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th rowspan="2" class="vertical-alinged-top">Кастом</th>
+                        <th colspan="2">Dialog</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+     <!-- сводная таблица - подсвечиваем оверлей -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th rowspan="2" class="vertical-alinged-top">Кастом</th>
+                        <th colspan="2">Dialog</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- сводная таблица - подсвечиваем явное закрытие -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th rowspan="2" class="vertical-alinged-top">Кастом</th>
+                        <th colspan="2">Dialog</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- сводная таблица - подсвечиваем неявное закрытие -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th rowspan="2" class="vertical-alinged-top">Кастом</th>
+                        <th colspan="2">Dialog</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+     <!-- сводная таблица - подсвечиваем закрытие на Escape -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th rowspan="2" class="vertical-alinged-top">Кастом</th>
+                        <th colspan="2">Dialog</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+     <!-- сводная таблица - подсвечиваем focus trap -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th rowspan="2" class="vertical-alinged-top">Кастом</th>
+                        <th colspan="2">Dialog</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- сводная таблица - подсвечиваем top layer -->
+    <section class="slide slide_with-table">
+        <div class="diz-table-wrapper">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th rowspan="2" class="vertical-alinged-top">Кастом</th>
+                        <th colspan="2">Dialog</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Top layer</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+     <!-- сводная таблица - подсвечиваем семантику -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper">
+            <table class="diz-my-table">
+                <thead class="muted">
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th rowspan="2" class="vertical-alinged-top">Кастом</th>
+                        <th colspan="2">Dialog</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="muted">
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr class="muted">
+                        <td class="fixed-cell">Top layer</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+     <!-- сводная таблица - заполненная -->
+     <style>
+        .slide_with-table {
+            background-color: hsla(0, 0%, 95%, 1);
+            padding: 0 70px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .diz-table-wrapper {
+            padding: 35px;
+            background-color: hsl(0, 0%, 100%);
+            border-radius: 37px;
+        }
+
+        .slide .diz-my-table {
+            width: 100%;
+            table-layout: fixed;
+            line-height: 1.5;
+            font-size: 0.8em;
+            margin: 0;
+        }
+
+        .slide .diz-my-table thead {
+            font-family: 'PT Sans';
+        }
+
+        .slide .diz-my-table tbody {
+            font-family: 'PT Sans';
+            font-size: 0.9em;
+        }
+
+        .slide .diz-my-table th,
+        .slide .diz-my-table td {
+            text-align: center;
+        }
+
+        .vertical-alinged-top {
+            vertical-align: top;
+        }
+
+        .slide .diz-my-table thead tr th {
+            padding-bottom: 8px;
+        }
+
+        .slide .diz-my-table tbody tr td {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .slide .diz-my-table tbody tr:last-of-type td {
+            padding-bottom: 0;
+        }
+
+        .slide .diz-my-table  th:first-child, 
+        .slide .diz-my-table  td:first-child  {
+            padding-left: unset;
+        }
+
+        .slide .diz-my-table  th:last-child, 
+        .slide .diz-my-table  td:last-child {
+            padding-right: unset;
+        }
+
+        .slide .diz-my-table  th.fixed-cell,
+        .slide .diz-my-table  td.fixed-cell {
+            padding-left: 0;
+            width: 185px;
+            text-align: left;
+        }
+
+        .slide .diz-my-table tr:not(:last-of-type) > * {
+            background-image: unset;
+        }
+
+        .slide .diz-my-table tbody tr:first-of-type td {
+            border-top: 3px solid hsla(0, 0%, 94%, 1);
+        }
+
+        .slide .diz-my-table tbody tr:not(:last-of-type) td {
+            border-bottom: 3px solid hsla(0, 0%, 94%, 1);
+        }
+
+        .slide .diz-my-table thead tr th:not(:last-of-type) {
+            border-right: 3px solid hsla(0, 0%, 94%, 1);
+        }
+
+        .slide .diz-my-table tbody tr td:not(:last-of-type) {
+            border-right: 3px solid hsla(0, 0%, 94%, 1);
+        }
+     </style>
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper">
+            <table class="diz-my-table">
+                <thead>
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th rowspan="2" class="vertical-alinged-top">Кастом</th>
+                        <th colspan="2">Dialog</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Top layer</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Что когда использовать?</h2>
+    </section>
+
+    <!-- сводная таблица - заполненная -->
+     <section class="slide slide_with-table">
+        <div class="diz-table-wrapper">
+            <table class="diz-my-table">
+                <thead>
+                    <tr>
+                        <th rowspan="2" class="fixed-cell vertical-alinged-top">Характеристика</th>
+                        <th rowspan="2" class="vertical-alinged-top">Кастом</th>
+                        <th colspan="2">Dialog</th>
+                        <th colspan="2">Popover</th>
+                    </tr>
+                    <tr>
+                        <th>show()</th>
+                        <th>showModal()</th>
+                        <th>auto</th>
+                        <th>manual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fixed-cell">Привязка к якорю</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Внешний вид</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Оверлей</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Явное закрытие</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Неявное закрытие</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Закрытие на Escape</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Focus trap</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Top layer</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                    </tr>
+                    <tr>
+                        <td class="fixed-cell">Семантика / a11y</td>
+                        <td>❌</td>
+                        <td>✅</td>
+                        <td>✅</td>
+                        <td>❌</td>
+                        <td>❌</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Инструкция из трёх шагов</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Нужна поддержка <br> старых браузеров?</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text"><code>&lt;div class="custom"&gt;</code></h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Нужна модальность?</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text"><code>&lt;dialog&gt;</code></h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text">Для всего остального есть...</h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/mastercard-logo.jpg" alt="" class="place" style="height: 70%;">
+    </section>
+
+    <section class="slide">
+        <h2 class="place slide_title centered-text"><code>popover</code></h2>
+    </section>
+
+    <section class="slide">
+        <img src="./images/mem-pepe-happy.jpg" alt="" class="cover" style="max-height: 80%;">
+    </section>
+
+   <section class="slide">
+        <div class="place" style="width: 70%; border-radius: 20px; background-color: hsl(216, 36%, 95%); padding: 10px 20px 30px;">
+            <img src="./images/screen-shot-slides-repo.jpg" alt="" style="width:100%;">
+            <img src="./images/qr-code-slides-repo.png" alt="" style="height: 200px; margin: -15px auto 20px; display: block; padding: 15px; border-radius: 12px; background: white;">
+        </div>
+        <a href="https://github.com/akhmadullin/fc-2024-dialog-and-popover" class="copyright">Репозиторий со слайдами</a>
+    </section>
+
+    <section class="slide" id="the-end">
+        <img src="./images/end.svg" alt="" class="cover width">
+        <img src="./images/qr-code-vote-for-doklad.gif" alt="" class="place t r"
+            style="right: 41px;
+            height: 234px;
+            top: 83px;
+            right: 42px;"
+        />
+        <!-- <h5 class="place b r" style="bottom: 30.2%; right: 9%;">Оставь отзыв</h5> -->
+        <div class="end-bio">
+            <h2 class="end-bio__title">Открыт к диалогу!</h2>
+            <div class="end-bio__name">
+                Рома Ахмадуллин
+            </div>
+            <div class="end-bio__company">
+                Дром
+            </div>
+            <div class="end-bio__links">
+                <div class="end-bio__link-block">
+                    <img src="./images/logo-github-2.svg" alt="" class="end-bio__link-logo" />
+                    <a href="https://github.com/akhmadullin/fc-2024-dialog-and-popover" class="end-bio__link">akhmadullin/fc-2024-dialog-and-popover</a>
+                </div>
+                <div class="end-bio__link-block">
+                    <img src="./images/logo-telegram.svg" alt="" class="end-bio__link-logo">
+                    <a href="https://t.me/akhmadullin_roman" class="end-bio__link">akhmadullin_roman</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="progress"></div>
+
+    <script src="node_modules/@shower/core/dist/shower.js"></script>
+    <script src="./lib/highlight/highlight.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

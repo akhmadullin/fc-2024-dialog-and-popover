@@ -1,0 +1,88 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Диалог - модальный и не модальный - явное закрытие</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../lib/styles/fonts-for-demos.css">
+    <link rel="stylesheet" href="../../lib/styles/buttons.css">
+</head>
+<body>
+    <style>
+        :root {
+            /* --placeholer-background: lightgray;
+            --border-radius-size: 6px; */
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        html, body, div, button {
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+    </style>
+    <div class="container">
+        <button class="button button_black" id="non-modal-dialog-openner">
+            Немодальный
+        </button>
+        <button class="button button_yellow" id="modal-dialog-openner">
+            Модальный
+        </button>
+       <dialog id="non-modal-dialog">
+            <h2>Немодальный диалог</h2>
+            <p>Могу закрываться явно через <code>dialog.close()</code></p>
+            <button class="button button_gray" id="non-modal-dialog-closer">Закрыть</button>
+       </dialog>
+       <dialog id="modal-dialog">
+            <h2>Модальный диалог</h2>
+            <p>Я тоже так могу</p>
+            <button class="button button_gray" id="modal-dialog-closer">Закрыть</button>
+       </dialog>
+    </div>
+    <script>
+        // не модальный диалог
+       const nonModalDialog = document.querySelector('#non-modal-dialog');
+
+       const nonModalDialogOpenner = document.querySelector('#non-modal-dialog-openner');
+       nonModalDialogOpenner.addEventListener('click', () => {
+            nonModalDialog.show();
+       });
+
+       const nonModalDialogCloser = document.querySelector('#non-modal-dialog-closer');
+       nonModalDialogCloser.addEventListener('click', () => {
+            nonModalDialog.close();
+       });
+
+       // модальный диалог
+       const modalDialog = document.querySelector('#modal-dialog');
+
+       const modalDialogOpenner = document.querySelector('#modal-dialog-openner');
+       modalDialogOpenner.addEventListener('click', () => {
+            modalDialog.showModal();
+       });
+
+       const modalDialogCloser = document.querySelector('#modal-dialog-closer');
+       modalDialogCloser.addEventListener('click', () => {
+            modalDialog.close();
+       });
+    </script>
+</body>
+</html>
