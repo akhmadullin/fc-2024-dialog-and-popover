@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../lib/styles/fonts-for-demos.css">
     <link rel="stylesheet" href="../../lib/styles/buttons.css">
     <link rel="stylesheet" href="../../lib/supports-notifications/popover/styles.css">
+    <link rel="stylesheet" href="../../lib/click-point-shower/styles.css">
 </head>
 <body>
     <style>
@@ -77,5 +78,10 @@
             Нас теперь двое!
         </div>
     </div>
+    <script src="../../lib/click-point-shower/index.js"></script>
+    <script>
+       const clickPointShower = new ClickPointShower({ color: 'black' });
+       clickPointShower.startWatching();
+    </script>
 </body>
 </html>
