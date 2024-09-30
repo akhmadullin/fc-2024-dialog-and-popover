@@ -1641,6 +1641,32 @@
     <section class="slide">
         <pre class="place">
             <code class="language-css">
+            /* открытый диалог */
+            dialog {
+                opacity: 1;
+                scale: 1;
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-css">
+            /* открывающийся диалог */
+            @starting-style { 
+                dialog {
+                    opacity: 0; 
+                    scale: 1.1; 
+                }
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-css">
             /* закрывающийся диалог */
             dialog:not([open]) {
                 opacity: 0;
