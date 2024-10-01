@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Диалог - модальный в модальном - закрытие на Escape</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/PT_Sans/pt-sans_caption-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../lib/styles/fonts-for-demos.css">
+    <link rel="stylesheet" href="../../lib/styles/buttons.css">
+    <link rel="stylesheet" href="../../lib/pressed-key-shower/styles.css">
+</head>
+<body>
+    <style>
+        :root {
+            /* --placeholer-background: lightgray;
+            --border-radius-size: 6px; */
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        html, body, div, button {
+            box-sizing: border-box;
+        }
+
+        .container {
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+    </style>
+    <div class="container">
+        <div id="pressed-key" class="pressed-key">Escape</div>
+        <button class="button button_yellow" id="modal-dialog-openner">
+            Открыть первый диалог
+        </button>
+       <dialog id="modal-dialog" style="width: 500px; height: 300px; box-sizing: border-box; padding: 50px; text-align: center;">
+            <h2>Первый диалог</h2>
+            <p>Можем позвать моего друга!</p>
+            <button class="button button_yellow" id="modal-dialog-openner-2">
+                Открыть второй диалог
+            </button>
+            <!-- <button id="modal-dialog-closer">Закрыть</button> -->
+       </dialog>
+       <dialog id="modal-dialog-2" style="text-align: center;">
+        <h2>Второй диалог</h2>
+        <p>Нас теперь двое!</p>
+        <!-- <button id="modal-dialog-closer">Закрыть</button> -->
+   </dialog>
+    </div>
+    <script>
+       // модальный диалог
+       const modalDialog = document.querySelector('#modal-dialog');
+
+       const modalDialogOpenner = document.querySelector('#modal-dialog-openner');
+       modalDialogOpenner.addEventListener('click', () => {
+            modalDialog.showModal();
+       });
+
+       // модальный диалог 2
+       const modalDialog2 = document.querySelector('#modal-dialog-2');
+
+       const modalDialogOpenner2 = document.querySelector('#modal-dialog-openner-2');
+       modalDialogOpenner2.addEventListener('click', () => {
+            modalDialog2.showModal();
+       });
+    </script>
+    <script src="../../lib//pressed-key-shower/index.js"></script>
+    <script>
+        new PressedKeyShower({ keysToShow: [{ code: 'Escape', caption: 'Escape' }] });
+    </script>
+</body>
+</html>

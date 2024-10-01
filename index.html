@@ -1112,6 +1112,10 @@
         <iframe src="./demos/dialog-modal-and-non-modal-escape/index.html" class="cover width height"></iframe>
     </section>
 
+    <section class="slide">
+        <iframe src="./demos/dialog-modal-in-modal-escape/index.html" class="cover width height"></iframe>
+    </section>
+
     <!-- dialog table - заполняем закрытие на Escape -->
     <section class="slide slide_with-table">
         <div class="diz-table-wrapper diz-table-wrapper_dialog-table">
@@ -1636,6 +1640,32 @@
     <section class="slide slide_can-i-use">
         <img src="./images/can-i-use-starting-style.jpeg" class="cover slide_can-i-use__image" />
         <a href="https://caniuse.com/mdn-css_at-rules_starting-style" class="copyright">Can I use: @strating-style</a>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-css">
+            /* открытый диалог */
+            dialog {
+                opacity: 1;
+                scale: 1;
+            }
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="place">
+            <code class="language-css">
+            /* открывающийся диалог */
+            @starting-style { 
+                dialog {
+                    opacity: 0; 
+                    scale: 1.1; 
+                }
+            }
+            </code>
+        </pre>
     </section>
 
     <section class="slide">
