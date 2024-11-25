@@ -9,3 +9,7 @@
 ## Репозиторий с компонентами на основе dialog'а и popover'а
 
 В докладе упоминается репозиторий с react компонентами, сделанными на основе элемента dialog и атрибута popover. Репозиторий доступен на [github](https://github.com/akhmadullin/dialog-and-popover-use-cases).
+
+## Запись доклада
+
+Посмотреть запись доклада можно на [YouTube](https://youtu.be/x4ZCGfUZntk).
